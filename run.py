@@ -36,7 +36,7 @@ def game_rules():
 
     # Line by line rules of the game
     print("\nRules of the Game:")
-    print("1. Your first challenge is to guess a 3-letter word.")
+    print("1. Your first challenge is to guess a four-letter word.")
     print("2. Successfully guessing a word advances you to the next level.")
     print("3. Each new level increases the word length by one letter, up to a maximum of 9 letters.")
     print("4. Keep guessing words until you reach the maximum length or make too many incorrect guesses.")
