@@ -16,6 +16,7 @@ def clear_terminal():
     """
     os.system("cls" if os.name == "nt" else "clear")
 
+
 def welcome_page():
     """
     Displays the main title page
@@ -27,7 +28,9 @@ def welcome_page():
 
     input("Please press ENTER to begin!\n")
     clear_terminal()
-    game_introduction()
+    game_rules()
+    hangman()
+
 
 def game_rules():
     """
@@ -47,13 +50,15 @@ def game_rules():
     print("1. Your first challenge is to guess a four-letter word.")
     print("2. Successfully guessing a word advances you to the next level.")
     print("3. During each round, you will have 6 lives.")
-    print("4. Each new level increases the word length by one letter, up to a maximum of 9 letters.")
-    print("5. Keep guessing words until you reach the maximum length or make too many incorrect guesses.")
-    print("6. The ship will stay afloat as long as you keep the words afloat in your mind!")
+    print("4. Each new level increases the word length by one letter, ")
+    print("   up to a maximum of 9 letters.")
+    print("5. Keep guessing words until you reach the maximum length or make ")
+    print("   too many incorrect guesses.")
+    print("6. The ship will stay afloat as long you guess correctly!")
 
-    print("\nAre you ready to set sail on this wordplay adventure? Let's begin!\n")
+    print("\nAre you ready to set sail on this wordplay adventure? ")
+    print("  Let's begin!\n")
 
-    # main()
 
 def get_random_word(word_length):
     filtered_words = [
@@ -66,22 +71,37 @@ def display_word(word, guessed_letters):
                    else '_' for letter in word)
 
 
+def hangman():
+    print("Welcome to Watery Wordplay Wreck!")
+
+    max_attempts = 6
+    current_word_length = 4
+
+    while current_word_length <= 9:
+        word = get_random_word(current_word_length)
+        guessed_letters = set()
+        attempts = 0
+
+        print(f"\nWord: {display_word(word, guessed_letters)} (length: {current_word_length})")
+
+        while attempts < max_attempts:
+            guess = input("Enter a letter: ").upper()
+
+            if guess.isalpha() and len(guess) == 1:
+                guessed_letters.add(guess)
+
+                if all(letter.upper() in guessed_letters for letter in word):
+                    print(f"Congratulations! You guessed the word: {word}")
+                    current_word_length += 1
+                    break
+
+                if guess not in word:
+                    attempts += 1
+                    print(f"Incorrect guess! {max_attempts - attempts} attempts left.")
+            else:
+                print(f"\nGame Over! The word was {word}")
+                current_word_length = 4  # Reset difficulty for the next round
 
 
-
-
-
-
-
-
-
-
-"""
-Main function calls:
-def main():
-    number_of_lives = 6
-    random_word = get_random_word()
-    play_game(random_word, number_of_lives)
-
-welcome_page()
-"""
+if __name__ == "__main__":
+    welcome_page()
