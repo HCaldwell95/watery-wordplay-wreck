@@ -26,7 +26,7 @@ def welcome_page():
     clear_terminal()
 
     print(ascii_art.TITLE)
-    print("PLACEHOLDER FOR 'Welcome to the Watery Wordplay Wreck!'")
+    print("\nWelcome to the Watery Wordplay Wreck!")
 
     input("Please press ENTER to begin!\n")
     clear_terminal()
@@ -42,27 +42,30 @@ def game_rules():
     clear_terminal()
 
     # Title
-    print("PLACEHOLDER FOR ASCII ART 'RULES'")
+    print(ascii_art.RULES)
 
     # Introduction to the game
-    print("\nWelcome to Watery Wordplay Wreck!")
-    print("Prepare to embark on a nautical journey of linguistic challenges.")
+    print("\nPrepare to embark on a nautical journey of linguistic challenges.")
     print("In this game, you'll be deciphering words related to the sea.")
     print("Let's dive in!")
 
     # Line by line rules of the game
     print("\nRules of the Game:")
-    print("1. Your first challenge is to guess a four-letter word.")
+    print("1. Suggest one letter at a time to guess the word.")
     print("2. Successfully guessing a word advances you to the next level.")
-    print("3. During each round, you will have 6 lives.")
-    print("4. Each new level increases the word length by one letter, ")
-    print("   up to a maximum of 9 letters.")
-    print("5. Keep guessing words until you reach the maximum length or make ")
+    print("3. Each new level increases the word length by one letter.")
+    print("4. Keep guessing words until you reach the maximum length or make ")
     print("   too many incorrect guesses.")
-    print("6. The ship will stay afloat as long you guess correctly!")
+    print("5. The ship will stay afloat as long you guess correctly!")
 
-    print("\nAre you ready to set sail on this wordplay adventure? ")
-    print("  Let's begin!\n")
+    print("\nYou will have 6 lives for each round.")
+    print("The ship will begin to sink for each failed attempt")
+    print("I suggest we guess the word and save the ship before it sinks!")
+
+    print("\nYour first challenge is to guess a four-letter word.")
+
+    input("\nPlease press ENTER when you are ready to set sail.\n")
+    clear_terminal()
 
 
 def get_random_word(word_length):
@@ -72,14 +75,12 @@ def get_random_word(word_length):
 
 
 def display_word(word, guessed_letters):
-    return ''.join(letter if letter in guessed_letters
-                   else '_' for letter in word)
+    return ''.join(letter if letter in guessed_letters else '_' for letter in word)
 
 
 def hangman():
 
-    clear_terminal()
-    print("Welcome to Watery Wordplay Wreck!")
+    print("Let's play the Watery Wordplay Wreck! Good Luck.")
 
     max_attempts = 6
     current_word_length = 4
@@ -108,6 +109,7 @@ def hangman():
             else:
                 print(f"\nGame Over! The word was {word}")
                 current_word_length = 4  # Reset difficulty for the next round
+                break
 
 
 if __name__ == "__main__":
