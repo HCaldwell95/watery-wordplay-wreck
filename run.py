@@ -9,6 +9,7 @@ import os
 
 import ascii_art
 from words import sea_themed_words
+from sinking_ship import draw_sinking_ship
 
 
 def clear_terminal():
@@ -44,11 +45,6 @@ def game_rules():
     # Title
     print(ascii_art.RULES)
 
-    # Introduction to the game
-    print("\nPrepare to embark on a nautical journey of linguistic challenges.")
-    print("In this game, you'll be deciphering words related to the sea.")
-    print("Let's dive in!")
-
     # Line by line rules of the game
     print("\nRules of the Game:")
     print("1. Suggest one letter at a time to guess the word.")
@@ -56,7 +52,6 @@ def game_rules():
     print("3. Each new level increases the word length by one letter.")
     print("4. Keep guessing words until you reach the maximum length or make ")
     print("   too many incorrect guesses.")
-    print("5. The ship will stay afloat as long you guess correctly!")
 
     print("\nYou will have 6 lives for each round.")
     print("The ship will begin to sink for each failed attempt")
@@ -95,7 +90,7 @@ def hangman():
         while attempts < max_attempts:
             guess = input("Enter a letter: ").upper()
 
-            if guess.isalpha() and len(guess) == 1:
+            if len(guess) == 1 and guess.isalpha():
                 guessed_letters.add(guess)
 
                 if all(letter.upper() in guessed_letters for letter in word):
@@ -106,10 +101,20 @@ def hangman():
                 if guess not in word:
                     attempts += 1
                     print(f"Incorrect guess! {max_attempts - attempts} attempts left.")
+                else:
+                    print(f"Good guess! Word: {display_word(word, guessed_letters)}")
+
             else:
-                print(f"\nGame Over! The word was {word}")
-                current_word_length = 4  # Reset difficulty for the next round
-                break
+                print(f'Invalid input: you have entered "{guess}"')
+                print('Please enter a single letter.')
+                continue
+
+        else:
+            print(f"\nGame Over! The word was {word}")
+            current_word_length = 4  # Reset difficulty for the next round
+            break
+
+        draw_sinking_ship(max_attempts)
 
 
 if __name__ == "__main__":
