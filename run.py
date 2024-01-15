@@ -32,7 +32,8 @@ def welcome_page():
     input("Please press ENTER to begin!\n")
     clear_terminal()
     game_rules()
-    hangman()
+    random_word = get_random_word(4)
+    play_game(random_word)
 
 
 def game_rules():
@@ -72,50 +73,118 @@ def get_random_word(word_length):
 def display_word(word, guessed_letters):
     return ''.join(letter if letter in guessed_letters else '_' for letter in word)
 
+def restart_game():
+    """ 
+    Asks the player if they would like to play the game again.
+    
+    """
 
-def hangman():
 
-    print("Let's play the Watery Wordplay Wreck! Good Luck.")
 
-    max_attempts = 6
-    current_word_length = 4
 
-    while current_word_length <= 9:
-        word = get_random_word(current_word_length)
-        guessed_letters = set()
-        attempts = 0
+""" 
+Testing Code to see if better than existing
+"""
 
-        print(f"\nWord: {display_word(word, guessed_letters)} (length: {current_word_length})")
+def play_game(word, max_attempts=6):
+    current_word_length = len(word)
+    used_letters = []
+    used_words = []
+    secret_word = "_" * len(word)
 
-        while attempts < max_attempts:
-            guess = input("Enter a letter: ").upper()
+    clear_terminal()
+    print("\nLet's play the Watery Wordplay Wreck! Good Luck.")
+    print("\nThis word has " + f"{len(word)} letters.")
+    print("Good Luck!")
 
-            if len(guess) == 1 and guess.isalpha():
-                guessed_letters.add(guess)
+    draw_sinking_ship(max_attempts)
 
-                if all(letter.upper() in guessed_letters for letter in word):
-                    print(f"Congratulations! You guessed the word: {word}")
-                    current_word_length += 1
-                    break
+    while max_attempts > 0:
+        guess = input("Please enter a letter or a word:\n").upper()
+        clear_terminal()
+        try:
 
-                if guess not in word:
-                    attempts += 1
-                    print(f"Incorrect guess! {max_attempts - attempts} attempts left.")
-                else:
-                    print(f"Good guess! Word: {display_word(word, guessed_letters)}")
-
-            else:
-                print(f'Invalid input: you have entered "{guess}"')
-                print('Please enter a single letter.')
+            if not guess.isalpha():
+                print(f'Invalid input: you have entered "{guess}".')
+                print("Please enter a letter.")
                 continue
 
-        else:
-            print(f"\nGame Over! The word was {word}")
-            current_word_length = 4  # Reset difficulty for the next round
-            break
+            elif len(guess) == len(word) and guess.isalpha():
+                if guess in used_letters:
+                    print(f'You have already tried "{guess}".')
+                    print("Please try again!")
 
+                elif guess != word:
+                    used_words.append(guess)
+                    print(f'Sorry, "{guess}" is not the word.\n')
+                    max_attempts -= 1
+                else:
+                    secret_word = word
+                    break
+
+            elif len(guess) > 1 and guess.isalpha():
+                print(f"Invalid input: you have entered {len(guess)} letters.")
+                print("Please enter a letter "
+                      f"or word containing {len(word)} letters.")
+
+            elif len(guess) == 1 and guess.isalpha():
+                if guess in used_letters:
+                    print(f'You have already tried "{guess}".')
+                    print("Please try again!")
+                elif guess not in word:
+                    max_attempts -= 1
+                    used_letters.append(guess)
+                    print(f'Sorry, "{guess}" is not in the word.')
+                    if max_attempts > 0:
+                        print(f"You have {max_attempts} attempts left.")
+                else:
+                    used_letters.append(guess)
+                    print(f'"{guess}" IS in the word!')
+                    print("Good job!")
+
+                    word_as_list = list(secret_word)
+                    indices = [
+                        i for i, letter in enumerate(word) if letter == guess]
+                    for index in indices:
+                        word_as_list[index] = guess
+                    secret_word = "".join(word_as_list)
+                    if "_" not in secret_word:
+                        break
+        except ValueError as error:
+            print(f"Invalid data: {error}, please try again.\n")
+            continue
+
+        if len(used_letters) <= 1 and max_attempts > 0:
+            print("\nThe word to guess: " + secret_word)
+            print()
+
+        elif max_attempts > 0:
+            print("\nThe word to guess: " + secret_word)
+            print("Attempted letters: ", ", ".join(sorted(used_letters)))
+        
         draw_sinking_ship(max_attempts)
 
+    if secret_word == word:
+        current_word_length += 1
+        clear_terminal()
+        print("Congratulations!")
+        print(f'"{word}" was the correct answer!')
+        
+        
+    
+    else: 
+        clear_terminal()
+        print("Good effort! The correct word was " +
+              f'"{word}"')
+        print("Thank you for playing our Watery Wordplay Wreck!")
 
-if __name__ == "__main__":
+    restart_game()
+
+def main():
+    """
+    Calls the main functions to run the game
+    """
+    clear_terminal()
     welcome_page()
+
+main()
