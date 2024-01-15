@@ -331,6 +331,9 @@ The live link can be found here - <https://github.com/HCaldwell95/salt-and-stone
 
 ### Media
 
+- <a href="https://patorjk.com/software/taag/#p=testall&f=Slant%20Relief&t=Watery%20Wordplay" target="_blank">Patorjk</a>
+    - Provided all of the Ascii Art for the titles throughout the application.
+
 - <a href="https://www.google.co.uk/">Google Images</a>
   - All of my images have been pulled from a google search:
     - https://www.soundonsound.com/people/brendan-perry-quivvy-studio-church-music

@@ -7,6 +7,7 @@ import random
 # Import os to interact with the native operating system to clear the terminal
 import os
 
+import ascii_art
 from words import sea_themed_words
 
 
@@ -22,8 +23,9 @@ def welcome_page():
     Displays the main title page
     Prompts the player to press ENTER to begin the game
     """
+    clear_terminal()
 
-    print("PLACEHOLDER FOR ASCII ART 'WATERY WORDPLAY WRECK'")
+    print(ascii_art.TITLE)
     print("PLACEHOLDER FOR 'Welcome to the Watery Wordplay Wreck!'")
 
     input("Please press ENTER to begin!\n")
@@ -36,6 +38,9 @@ def game_rules():
     """
     Introduces the game and provides the user with the game rules
     """
+
+    clear_terminal()
+
     # Title
     print("PLACEHOLDER FOR ASCII ART 'RULES'")
 
@@ -72,6 +77,8 @@ def display_word(word, guessed_letters):
 
 
 def hangman():
+
+    clear_terminal()
     print("Welcome to Watery Wordplay Wreck!")
 
     max_attempts = 6
