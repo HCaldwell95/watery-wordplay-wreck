@@ -1,13 +1,18 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
+
+# Import random to allow words to be chosen randomly from words.py
 import random
+# Import os to interact with the native operating system to clear the terminal
+import os
+
 from words import sea_themed_words
 
 
 def clear_terminal():
     """
-    Clears the terminal ready for new content - https://www.geeksforgeeks.org/clear-screen-python/
+    Clears the terminal ready for new content
     """
     os.system("cls" if os.name == "nt" else "clear")
 
@@ -56,7 +61,7 @@ def get_random_word(word_length):
     return random.choice(filtered_words)
 
 
-def display_word(word, guessed letters):
+def display_word(word, guessed_letters):
     return ''.join(letter if letter in guessed_letters
                    else '_' for letter in word)
 
