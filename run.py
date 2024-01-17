@@ -6,6 +6,7 @@ import os
 import ascii_art
 from words import sea_themed_words
 from sinking_ship import draw_sinking_ship
+from game_over import draw_game_over
 
 
 def clear_terminal():
@@ -52,8 +53,8 @@ def game_rules():
     print("1. Suggest one letter at a time to guess the word.")
     print("2. Suggest a word if you think you've cracked it!\n")
 
-    print("\nBy selecting the number of lives, you will choose your difficulty")
-    print("The ship will begin to sink following each failed attempt")
+    print("\nBy selecting the number of lives, you will choose your difficulty.")
+    print("The ship will begin to sink following each failed attempt.")
     print("I suggest we guess the word and save the ship before it sinks!")
 
     main()
@@ -66,7 +67,7 @@ def choose_num_of_lives():
     loop continues until a valid input has been provided.
     """
     while True:
-        print("\nPlease select the number of lives.")
+        print("\nPlease select the number of lives you wish to play with.")
         choice = input('Enter "4" for 4 lives, "6" for 6 lives or "8" for 8 lives:\n')
 
         if choice == "4":
@@ -110,7 +111,7 @@ def restart_game():
     Asks the player if they would like to play the game again.
     """
     while True:
-        print("Would you like to play again? Enter Y for yes and N for no\n")
+        print("Would you like to play again? Enter Y for YES and N for NO\n")
         restart = input("Please enter Y or N:\n").upper()
         if restart == "Y":
             clear_terminal()
@@ -214,8 +215,9 @@ def play_game(word, number_of_lives):
     else: 
         clear_terminal()
         print("Good effort! The correct word was " +
-              f'"{word}"')
-        print("Thank you for playing our Watery Wordplay Wreck!")
+              f'"{word}".')
+        print("Thank you for playing our Watery Wordplay Wreck!\n")
+        draw_game_over()
 
     restart_game()
 
