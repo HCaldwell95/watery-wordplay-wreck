@@ -7,6 +7,7 @@ import ascii_art
 from words import sea_themed_words
 from sinking_ship import draw_sinking_ship
 from game_over import draw_game_over
+from font_styles import styles
 
 
 def clear_terminal():
@@ -24,7 +25,7 @@ def welcome_page():
     clear_terminal()
 
     print(ascii_art.TITLE)
-    print("\nWelcome to the Watery Wordplay Wreck!")
+    print(styles.BLUEBOLD + "\nWelcome to the Watery Wordplay Wreck!" + styles.END)
 
     input("Please press ENTER to begin!\n")
     clear_terminal()
@@ -50,8 +51,8 @@ def game_rules():
     print(ascii_art.RULES)
 
     print("\nRules of the Game:")
-    print("1. Suggest one letter at a time to guess the word.")
-    print("2. Suggest a word if you think you've cracked it!\n")
+    print(styles.GREEN + "1. Suggest one letter at a time to guess the word." + styles.END)
+    print(styles.GREEN + "2. Suggest a word if you think you've cracked it!\n" + styles.END)
 
     print("\nBy selecting the number of lives, you will choose your difficulty.")
     print("The ship will begin to sink following each failed attempt.")
@@ -80,8 +81,8 @@ def choose_num_of_lives():
             number_of_lives = 8
             return number_of_lives
         else:
-            print(f'Invalid input: you have entered "{choice}".')
-            print('Please enter "4", "6", or "8".')
+            print(styles.YELLOW + f'Invalid input: you have entered "{choice}".')
+            print('Please enter "4", "6", or "8".' + styles.END)
 
 
 """
@@ -111,8 +112,8 @@ def restart_game():
     Asks the player if they would like to play the game again.
     """
     while True:
-        print("Would you like to play again? Enter Y for YES and N for NO\n")
-        restart = input("Please enter Y or N:\n").upper()
+        print(f"Would you like to play again? Enter {styles.GREEN}Y{styles.END} for {styles.GREEN}YES{styles.END} and {styles.RED}N{styles.END} for {styles.RED}NO\n{styles.END}")
+        restart = input(f"Please enter {styles.GREEN}Y{styles.END} or {styles.RED}N{styles.END}:\n").upper()
         if restart == "Y":
             clear_terminal()
             game_rules()
@@ -122,7 +123,7 @@ def restart_game():
             welcome_page()
             break
         else: 
-            print(f'Invalid Input: Please enter "Y" or "N".\n')
+            print(styles.YELLOW + f'Invalid Input: Please enter "Y" or "N".\n' + styles.END)
 
 
 def play_game(word, number_of_lives):
@@ -132,23 +133,23 @@ def play_game(word, number_of_lives):
 
     clear_terminal()
     print("\nLet's play the Watery Wordplay Wreck! Good Luck.")
-    print("\nThis word has " + f"{len(word)} letters.")
+    print("\nThis word has " + styles.BLUEBOLD + f"{len(word)} letters." + styles.END)
     print("Good Luck!")
 
     draw_sinking_ship(number_of_lives)
 
     while number_of_lives > 0:
-        guess = input("Please enter a letter or a word:\n").upper()
+        guess = input(f"Please enter a {styles.BOLD}LETTER {styles.END}or a {styles.BOLD}WORD{styles.END}:\n").upper()
         clear_terminal()
         try:
             if not guess.isalpha():
-                print(f'Invalid input: you have entered "{guess}".')
-                print("Please enter a letter.")
+                print(styles.YELLOW + f'Invalid input: you have entered "{guess}".')
+                print("Please enter a letter." + styles.END)
 
             elif len(guess) == len(word) and guess.isalpha():
                 if guess in used_letters:
-                    print(f'You have already tried "{guess}".')
-                    print("Please try again!")
+                    print(styles.YELLOW + f'You have already tried "{guess}".')
+                    print("Please try again!" + styles.END)
 
                 elif guess != word:
                     used_words.append(guess)
@@ -159,26 +160,26 @@ def play_game(word, number_of_lives):
                     break
 
             elif len(guess) > 1 and guess.isalpha():
-                print(f"Invalid input: you have entered {len(guess)} letters.")
+                print(styles.YELLOW + f"Invalid input: you have entered {len(guess)} letters.")
                 print("Please enter a letter "
-                    f"or word containing {len(word)} letters.")
+                    f"or word containing {len(word)} letters." + styles.END)
 
             elif len(guess) == 1 and guess.isalpha():
                 if guess in used_letters:
-                    print(f'You have already tried "{guess}".')
-                    print("Please try again!")
+                    print(styles.YELLOW + f'You have already tried "{guess}".')
+                    print("Please try again!" + styles.END)
 
                 elif guess not in word:
                     number_of_lives -= 1
                     used_letters.append(guess)
-                    print(f'Sorry, "{guess}" is not in the word.')
+                    print(styles.YELLOW + f'Sorry, "{guess}" is not in the word.' + styles.END)
                     if number_of_lives > 0:
                         print(f"You have {number_of_lives} attempts left.")
 
                 else:
                     used_letters.append(guess)
-                    print(f'"{guess}" IS in the word!')
-                    print("Good job!")
+                    print(styles.GREEN + f'"{guess}" IS in the word!')
+                    print("Good job!" + styles.END)
 
                     word_as_list = list(secret_word)
                     indices = [
@@ -190,7 +191,7 @@ def play_game(word, number_of_lives):
                         break
             
         except ValueError as error:
-            print(f'Invalid data: {error}, please try again.\n"')
+            print(styles.YELLOW + f'Invalid data: {error}, please try again.\n"' + styles.END)
             continue
 
         if len(used_letters) <= 1 and number_of_lives > 0:
@@ -199,14 +200,14 @@ def play_game(word, number_of_lives):
 
         elif number_of_lives > 0:
                 print("\nThe word to guess: " + secret_word)
-                print("Attempted letters: ", ", ".join(sorted(used_letters)))
+                print(styles.BLUE + "Attempted letters: ", ", ".join(sorted(used_letters)) + styles.END)
                 
         draw_sinking_ship(number_of_lives)
 
     if secret_word == word:
         clear_terminal()
         print("Congratulations!")
-        print(f'"{word}" was the correct answer!')
+        print(f'"{word}" was the correct answer!\n\n')
 
         """
         if current_word_length > MAX_WORD_LENGTH:
