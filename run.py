@@ -7,6 +7,7 @@ import ascii_art
 from words import sea_themed_words
 from sinking_ship import draw_sinking_ship
 from game_over import draw_game_over
+from game_winner import draw_game_winner
 from font_styles import styles
 
 
@@ -112,7 +113,7 @@ def restart_game():
     Asks the player if they would like to play the game again.
     """
     while True:
-        print(f"Would you like to play again? Enter {styles.GREEN}Y{styles.END} for {styles.GREEN}YES{styles.END} and {styles.RED}N{styles.END} for {styles.RED}NO\n{styles.END}")
+        print(f"\nWould you like to play again? Enter {styles.GREEN}Y{styles.END} for {styles.GREEN}YES{styles.END} and {styles.RED}N{styles.END} for {styles.RED}NO\n{styles.END}")
         restart = input(f"Please enter {styles.GREEN}Y{styles.END} or {styles.RED}N{styles.END}:\n").upper()
         if restart == "Y":
             clear_terminal()
@@ -128,7 +129,6 @@ def restart_game():
 
 def play_game(word, number_of_lives):
     used_letters = []
-    used_words = []
     secret_word = "_" * len(word)
 
     clear_terminal()
@@ -172,7 +172,7 @@ def play_game(word, number_of_lives):
                 elif guess not in word:
                     number_of_lives -= 1
                     used_letters.append(guess)
-                    print(styles.YELLOW + f'Sorry, "{guess}" is not in the word.' + styles.END)
+                    print(styles.RED + f'Sorry, "{guess}" is not in the word.' + styles.END)
                     if number_of_lives > 0:
                         print(f"You have {number_of_lives} attempts left.")
 
@@ -208,6 +208,7 @@ def play_game(word, number_of_lives):
         clear_terminal()
         print("Congratulations!")
         print(f'"{word}" was the correct answer!\n\n')
+        draw_game_winner()
 
         """
         if current_word_length > MAX_WORD_LENGTH:
