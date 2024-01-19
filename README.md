@@ -1,18 +1,18 @@
-# Watery Wordplay Wreck - My Milestone Project
+# Watery Wordplay Wreck
 
 Welcome to my third milestone project, Watery Wordplay Wreck.
 
 Watery Wordplay Wreck is a word guessing game built with Python. It is a <a href="https://en.wikipedia.org/wiki/Hangman_(game)" target="_blank">Hangman</a> game in the style of a sinking ship to represent the progress of the game.
 
-The user is able to choose the number of lives per game to set the difficulty. By guessing either one letter at a time, or an entire word, the user attempts to guess the correct word before the ship sinks completely. Each failed attempt results in the user losing a life and causes the ship to sink deeper into the sea.
+The user is able to choose the number of lives per game to set the difficulty. Through the process of making guesses, either letter by letter or by attempting to guess the entire word, the user endeavors to identify the correct word before the ship succumbs to the depths of the sea. With each unsuccessful attempt, the user loses a life, leading to the gradual sinking of the ship.
 
-The purpose of this project is to demonstrate my learning and understanding of the Python modules that I have completed thus far and to implement them into a live project. This was a great opportunity to showcase my skills in design and development. The project is a functional terminal application, built from a template provided by <a href="https://github.com/Code-Institute-Org/p3-template" target="_blank">Code Institute</a> combined with my Python code.
+The primary objective of this project is to showcase my comprehension and application of the Python modules I have studied thus far. By integrating them into a real-world project, I aim to demonstrate my proficiency in design and development. This terminal application, constructed using a template provided by <a href="https://github.com/Code-Institute-Org/p3-template" target="_blank">Code Institute</a> along with my Python code, serves as a tangible representation of my acquired skills.
 
-Thank you for taking the time to view my project and I truly hope you enjoy it as much as I did designing and developing it.
+I appreciate you taking the time to explore my project, and I sincerely hope you find as much enjoyment in it as I did during the design and development phases.
 
-<a href="https://hcaldwell95.github.io/salt-and-stone-studios/" target="_blank">View live project here</a>
+<a href="https://hcaldwell95.github.io/salt-and-stone-studios/" target="_blank">View the live project here THIS ISN'T FINISHED</a>
 
-<a href="https://github.com/HCaldwell95/watery-wordplay-wreck" target="_blank">View repository here</a>
+<a href="https://github.com/HCaldwell95/watery-wordplay-wreck" target="_blank">View the GitHub repository here CHANGE TO CORRECT REPOSITORY</a>
 
 ## UX - User Experience Design
 
@@ -32,34 +32,187 @@ As a returning user:
   - I would like the challenge to remain and encounter different words than my last visit.
 
 ## Logic Flow
-To plan the logic flow of the game, I created the chart below 
+For organizing the logic flow of the game, I created a flow chart that outlines the individual steps. Each step is color-coded to differentiate between various types of activities.
+
 <img src="./docs/flow-chart.png" alt="Image of the project flowchart">
   
 ## Existing Features
 
+### Welcome Page
+
+The is the welcome page for the game. It presents the game title in the form of ASCII Art. On this page, the game prompts the user to press ENTER to begin the game.
+
+### Rules Page
+
+Once the user has pressed ENTER, they will be taken to the Rules Page. This page consists of:
+  -  A 'RULES' Title - again presented in ASCII Art.
+  -  The rules of the game.
+  -  A prompt for the user to select their difficulty by selecting the amount of lives they have.
+
+
+
+### Game Screen
+
+After the user has chosen their desired number of lives, the game initiates. A randomly selected nautical-themed word is assigned for each game, and the initial screen consistently displays a visual representation of their remaining lives through a sinking ship image, along with the number of letters in the secret word.
+
+At the bottom of the page, the user is prompted to input either a letter or a word.
+
+# IMAGE IMAGE IMAGE IMAGE
+
+#Show screens of each instance of the game page, demonstrating the sinking ship and attempted letters etc
+
+
+
+### End Game Page
+Upon completion of the game, the player is directed to the End of Game Screen.
+
+If the word is successfully guessed, the message "Congratulations!" is showcased, incorporating ASCII art to heighten the dramatic effect and extend congratulations to the player.
+
+# IMAGE
+
+If the user fails to guess the word before they run out of lives, the "Game Over" message is displayed along with an ASCII Art image of the ocean and no ship. The correct word is also revealed to the user.
+
+# IMAGE
+
+On this final page, the user is presented with the option to either replay the game or conclude it. Opting to play again returns the user to the Rules Page and prompts them to choose the number of lives for a new game. Selecting to finish the game redirects them to the Welcome Page.
+
+
+## Python Libraries Used 
+### random:
+  - The random library was incorporated to allow the application to randomly select a word from words.py for each game instance.
+### os:
+  - The os library facilitated communication with the operating system to refresh the terminal at various points throughout the game, enhancing the player's experience with a neater and more enjoyable interface.
+
+## Technologies Used
+### Programming Language
+  - Python was used to build the main content of the game.
+
+### Tools Used To Develop The Game
+  - <a href="https://www.gitpod.io/" target="_blank">Gitpod</a> served as the platform for creating, editing and previewing code throughout the development process.
+  - <a href="https://git-scm.com/" target="_blank">Git</a> was employed for version control, managing and tracking changes in the codebase.
+  - <a href="https://github.com/" target="_blank">GitHub</a> was utilised to store both the repository and the codes.
+  - <a href="https://dashboard.heroku.com/apps" target="_blank">Heroku</a> was chosen as the deployment platform for the application.
 
 ## Testing
 
+### Code Validation
 
-### Validator Testing
+The application underwent thorough validation to identify and rectify any syntax errors. The <a href="https://pep8ci.herokuapp.com/">CI Python Linter</a> was employed for this validation process, and it successfully confirmed the absence of errors in the code.
 
-### Unfixed Bugs
+<details>
+  <summary>Validation Results for run.py</summary>
+  <img src="">
+</details>
+
+<details>
+  <summary>Validation Results for sinking_ship.py</summary>
+  <img src="">
+</details>
+
+<details>
+  <summary>Validation Results for ascii_art.py</summary>
+  <img src="">
+</details>
+
+<details>
+  <summary>Validation Results for words.py</summary>
+  <img src="">
+</details>
+
+<details>
+  <summary>Validation Results for game_over.py</summary>
+  <img src="">
+</details>
+
+<details>
+  <summary>Validation Results for game_winner.py</summary>
+  <img src="">
+</details>
+
+<details>
+  <summary>Validation Results for font_styles.py</summary>
+  <img src="">
+</details>
+
+## Manual Testing
+
+
+### Welcome Page
+| Step  | Description         | Expected Result                                                            | Actual Result                                    | Pass/Fail   |
+| ----- | ------------------- | -------------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
+| 1     | Deployed Website    | Welcome Page loads with no issues                                          | Welcome Page loads as expected                   | Pass        |
+| 2     | Display Title ASCII | Title loads with ASCII Art                                                 | ASCII Art loads as expected                      | Pass        |
+| 3     | Font Styles         | Font styles are displayed correctly                                        | Font styles are displayed as expected            | Pass        |
+| 4     | Player Input        | Once the player presses ENTER, the terminal clears and loads the Rules Page| The terminal clears and the Rules Page is loaded | Pass        |
+
+### Rules Page
+| Step  | Description         | Expected Result                                                                     | Actual Result                                    | Pass/Fail   |
+| ----- | ------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
+| 1     | Rules Page          | Welcome Page loads with no issues                                                   | Welcome Page loads as expected                   | Pass        |
+| 2     | Display Title ASCII | Title loads with ASCII Art                                                          | ASCII Art loads as expected                      | Pass        |
+| 3     | Font Styles         | Font styles are displayed correctly                                                 | Font styles are displayed as expected            | Pass        |
+| 4     | Player Input        | Only "4", "6" and "8" are accepted                                                  | Input validation works as expected               | Pass        |
+| 5     | Player Input        | If the input is not valid, display error message                                    | Error message is displayed as expected           | Pass        |
+| 6     | Player Input        | Continues to request an input until a valid input is provided                       | Loops function as expected                       | Pass        |
+| 7     | Player Input        | Once a valid input has been entered, the terminal clears and the Game Page is loaded| The terminal clears and the Games Page is loaded | Pass        |
+
+# Image for validation
+
+### Game Page
+| Step  | Description         | Expected Result                                                                     | Actual Result                                    | Pass/Fail   |
+| ----- | ------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
+| 1     | Rules Page          | Welcome Page loads with no issues                                                   | Welcome Page loads as expected                   | Pass        |
+| 2     | Display Title ASCII | Title loads with ASCII Art                                                          | ASCII Art loads as expected                      | Pass        |
+| 3     | Font Styles         | Font styles are displayed correctly                                                 | Font styles are displayed as expected            | Pass        |
+| 4     | Player Input        | Only "4", "6" and "8" are accepted                                                  | Input validation works as expected               | Pass        |
+| 5     | Player Input        | If the input is not valid, display error message                                    | Error message is displayed as expected           | Pass        |
+| 6     | Player Input        | Continues to request an input until a valid input is provided                       | Loops function as expected                       | Pass        |
+| 7     | Player Input        | Once a valid input has been entered, the terminal clears and the Game Page is loaded| The terminal clears and the Games Page is loaded | Pass        |
+
 
 ## Deployment
 
-#### Github
+This application has been deployed using Heroku. Link to live project - Watery Wordplay Wreck.
 
-This project is deployed using GitHub pages using the following process,
+The steps for deploying the application are as follows:
 
-#### Deploying a GitHub Repository via GitHub Pages
+### Preparation:
+1. In order for input methods to work correctly in the terminal of the deployed website, add a new line character \n at the end of each text inside the input method so that the input request will be displayed in the terminal.
 
-1. In your <em>Repository</em> section, select the <em>Repository</em> you wish to deploy.
-2. In the top horizontal Menu, locate and click the <em>Settings</em> link.
-3. Inside the <em>Setting</em> page, around halfway down locate the <em>GitHub Pages</em> Section.
-4. Under <em>Source</em>, select the None tab and change it to <em>Main</em> and click <em>Save</em>.
-5. Finally once the page resets scroll back down to the <em>GitHub Pages</em> Section to see the following message "Your site is ready to be published at (<em>Link to the GitHub Page Web Address</em>)". It can take time for the link to open your project initially, so please don't be worried if it down not load immediately.
+2. If there are dependencies to run the application on Heroku, run pip3 freeze > requirements.txt command which will update the "requirements.txt" file to include those dependencies.
 
-#### Forking the Github Repository
+3. Push all updates to GitHub.
+
+### Deploying the Application to Heroku:
+1. Log into Heroku website.
+
+2. From the Dashboard page, select "New" and then "Create new app."
+
+3. Assign a name for the application, select the region and then select "Create app."
+
+4. Once the application is created, from the submenu at the top, select "Settings" and then "Reveal Config Vars" to set up config vars.
+
+5. In the KEY input field, enter "PORT" all in capitals and enter "8000" for the VALUE input field and select "Add." If there are other config vars required to run the application, add those here. For this application, there is no other config var required.
+
+6. Scroll down to the "Buildpacks" section and select "Add buildpack."
+
+7. Add buildpacks required to run the application. For this application, "Python" and "Nodejs" are required.
+
+    The order of the buildpacks is important. "Python" should be the first and then "Nodejs." If they are not in the correct order, click and drag to change.
+
+8. Select "Deploy" from the submenu at the top.
+    - Under the "Deployment method" section, select "GitHub" to connect to GitHub.
+    - Under the "Connect to GitHub" section, enter the name of the repository and select "Search."
+    - Once the repository is located, select "Connect" to connect the repository to the application within Heroku.
+
+9. Select either "Enable Automatic Deploys" which will deploy a new version of the application every time changes are pushed to GitHub or opt for "Manual Deploy." For this application, "Automatic Deploys" was selected.
+
+10. Once the application is deployed, scroll back to the top of the screen and select "Open app."
+Image for this step
+
+    If "Enable Automatic Deploys" has been selected, the application will be built and available after the next changes are pushed to GitHub.
+
+### Forking the Github Repository:
 
 You can fork a GitHub Repository to make a copy of the original repository to view or make changes without it affecting the original repository.
 
@@ -67,7 +220,7 @@ You can fork a GitHub Repository to make a copy of the original repository to vi
 2. At the top of the page to the right, under your account, click the <em>Fork</em> button.
 3. You will now have a copy of the repository in your GitHub account.
 
-#### Making a Local Clone
+### Cloning the Repository on GitHub:
 
 1. Find the GitHub Repository.
 2. <em>Click</em> the Code button
@@ -75,8 +228,6 @@ You can fork a GitHub Repository to make a copy of the original repository to vi
 4. In <em>Gitpod</em>, change the directory to the location you would like the cloned directory to be located.
 5. <em>Type</em> <code>git clone</code>, and <em>paste</em> the link you copied in step 3.
 6. Press <em>Enter</em> to have the local clone created.
-
-The live link can be found here - <https://github.com/HCaldwell95/salt-and-stone-studios>
 
 ## Credits
 
@@ -87,6 +238,9 @@ The live link can be found here - <https://github.com/HCaldwell95/salt-and-stone
 
 - <a href="https://www.geeksforgeeks.org/clear-screen-python/" target="_blank">GeeksforGeeks</a>
     - Provided the code for clearing the terminal.
+
+- <a href="https://stackoverflow.com/questions/39378020/how-to-display-table-in-readme-md-file-in-github">Stack Overflow</a>
+    - Provided the code to create tables in the README.md
 
 ### Media
 
