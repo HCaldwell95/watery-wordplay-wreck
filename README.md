@@ -146,7 +146,7 @@ The application underwent thorough validation to identify and rectify any syntax
 ### Rules Page
 | Step  | Description         | Expected Result                                                                     | Actual Result                                    | Pass/Fail   |
 | ----- | ------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
-| 1     | Rules Page          | Welcome Page loads with no issues                                                   | Welcome Page loads as expected                   | Pass        |
+| 1     | Rules Page          | Rules Page loads with no issues                                                     | Rules Page loads as expected                     | Pass        |
 | 2     | Display Title ASCII | Title loads with ASCII Art                                                          | ASCII Art loads as expected                      | Pass        |
 | 3     | Font Styles         | Font styles are displayed correctly                                                 | Font styles are displayed as expected            | Pass        |
 | 4     | Player Input        | Only "4", "6" and "8" are accepted                                                  | Input validation works as expected               | Pass        |
@@ -157,16 +157,17 @@ The application underwent thorough validation to identify and rectify any syntax
 # Image for validation
 
 ### Game Page
-| Step  | Description         | Expected Result                                                                     | Actual Result                                    | Pass/Fail   |
-| ----- | ------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
-| 1     | Rules Page          | Welcome Page loads with no issues                                                   | Welcome Page loads as expected                   | Pass        |
-| 2     | Display Title ASCII | Title loads with ASCII Art                                                          | ASCII Art loads as expected                      | Pass        |
-| 3     | Font Styles         | Font styles are displayed correctly                                                 | Font styles are displayed as expected            | Pass        |
-| 4     | Player Input        | Only "4", "6" and "8" are accepted                                                  | Input validation works as expected               | Pass        |
-| 5     | Player Input        | If the input is not valid, display error message                                    | Error message is displayed as expected           | Pass        |
-| 6     | Player Input        | Continues to request an input until a valid input is provided                       | Loops function as expected                       | Pass        |
-| 7     | Player Input        | Once a valid input has been entered, the terminal clears and the Game Page is loaded| The terminal clears and the Games Page is loaded | Pass        |
-
+| Step  | Description             | Expected Result                                                                     | Actual Result                                    | Pass/Fail   |
+| ----- | ----------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
+| 1     | Game Page               | Game Page loads with no issues                                                      | Welcome Page loads as expected                   | Pass        |
+| 2     | Font Styles             | Font styles are displayed correctly                                                 | Font styles are displayed as expected            | Pass        |
+| 3     | No. letters Display     | When the page is loaded, the word length is displayed                               | Error message is displayed as expected           | Pass        |
+| 4     | ASCII Art (Ship)        | ASCII art for sinking ship is displayed correctly based on chosen lives             | ASCII Art loads as expected                      | Pass        |
+| 5     | User Input (Validation) | Checks if user input is in alphabet, if not, error message is displayed             | Error message is displayed as expected           | Pass        |
+| 6     | User Input (Validation) | Validates the length and uniqueness of the input, offering feedback accordingly.    | Loops function as expected| Pass        |
+| 7     | User Input (Validation) | Checks if the input matches the word length and hasn't been attempted, and provides feedback if it's the correct word.|The displayed feedback aligns with the expected correctness of the input. | Pass |
+| 8     | User Input (Validation) | Correctly guessing the word leads to the game ending with a congratulatory message. Incorrect guesses result in life loss, and the guessed word is displayed. The game proceeds to the next attempt. | Successful word guesses lead to the anticipated end-of-game screen; unsuccessful ones deduct a life and proceed to the next attempt if lives remain. | Pass |
+| 9     | User Input (Validation) | Checks if the input matches the word length and hasn't been attempted, and provides feedback if it's the correct word.|The displayed feedback aligns with the expected correctness of the input. | Pass |
 
 ## Deployment
 

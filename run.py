@@ -110,12 +110,12 @@ def play_game(word, number_of_lives):
     """
     Performs the core functions of the game
     """
-    used_letters = []
-    used_words = []
-
+    
     # Displays the secret word to the user via underscores
     secret_word = "_" * len(word)
 
+    used_letters = []
+    used_words = []
     clear_terminal()
     print("\nLet's play the Watery Wordplay Wreck! Good Luck.")
     print("\nThis word has " + styles.BLUEBOLD + f"{len(word)} letters." +
