@@ -136,38 +136,61 @@ The application underwent thorough validation to identify and rectify any syntax
 
 
 ### Welcome Page
-| Step  | Description         | Expected Result                                                            | Actual Result                                    | Pass/Fail   |
-| ----- | ------------------- | -------------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
-| 1     | Deployed Website    | Welcome Page loads with no issues                                          | Welcome Page loads as expected                   | Pass        |
-| 2     | Display Title ASCII | Title loads with ASCII Art                                                 | ASCII Art loads as expected                      | Pass        |
-| 3     | Font Styles         | Font styles are displayed correctly                                        | Font styles are displayed as expected            | Pass        |
-| 4     | Player Input        | Once the player presses ENTER, the terminal clears and loads the Rules Page| The terminal clears and the Rules Page is loaded | Pass        |
+| Step  | Description                | Anticipated Outcome                                                        | Observed Outcome                                 | Status      |
+| ----- | -------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
+| 1     | Deployed Website           | Welcome Page loads with no issues                                          | Welcome Page loads as expected                   | Pass        |
+| 2     | Display Title ASCII        | Title loads with ASCII Art                                                 | ASCII Art loads as expected                      | Pass        |
+| 3     | Font Styles                | Font styles are displayed correctly                                        | Font styles are displayed as expected            | Pass        |
+| 4     | User Input / Clear Terminal| Once the player presses ENTER, the terminal clears and loads the Rules Page| The terminal clears and the Rules Page is loaded | Pass        |
 
 ### Rules Page
-| Step  | Description         | Expected Result                                                                     | Actual Result                                    | Pass/Fail   |
+| Step  | Description         | Anticipated Outcome                                                                 | Observed Outcome                                 | Status      |
 | ----- | ------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
 | 1     | Rules Page          | Rules Page loads with no issues                                                     | Rules Page loads as expected                     | Pass        |
 | 2     | Display Title ASCII | Title loads with ASCII Art                                                          | ASCII Art loads as expected                      | Pass        |
 | 3     | Font Styles         | Font styles are displayed correctly                                                 | Font styles are displayed as expected            | Pass        |
-| 4     | Player Input        | Only "4", "6" and "8" are accepted                                                  | Input validation works as expected               | Pass        |
-| 5     | Player Input        | If the input is not valid, display error message                                    | Error message is displayed as expected           | Pass        |
-| 6     | Player Input        | Continues to request an input until a valid input is provided                       | Loops function as expected                       | Pass        |
-| 7     | Player Input        | Once a valid input has been entered, the terminal clears and the Game Page is loaded| The terminal clears and the Games Page is loaded | Pass        |
+| 4     | User Input          | Only "4", "6" and "8" are accepted                                                  | Input validation works as expected               | Pass        |
+| 5     | User Input          | If the input is not valid, display error message                                    | Error message is displayed as expected           | Pass        |
+| 6     | User Input          | Continues to request an input until a valid input is provided                       | Loops function as expected                       | Pass        |
+| 7     | User Input          | Once a valid input has been entered, the terminal clears and the Game Page is loaded| The terminal clears and the Games Page is loaded | Pass        |
 
 # Image for validation
 
 ### Game Page
-| Step  | Description             | Expected Result                                                                     | Actual Result                                    | Pass/Fail   |
+| Step  | Description             | Anticipated Outcome                                                                 | Observed Outcome                                 | Status      |
 | ----- | ----------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
-| 1     | Game Page               | Game Page loads with no issues                                                      | Welcome Page loads as expected                   | Pass        |
+| 1     | Game Page               | Game Page loads with no issues                                                      | Game Page loads as expected                      | Pass        |
 | 2     | Font Styles             | Font styles are displayed correctly                                                 | Font styles are displayed as expected            | Pass        |
 | 3     | No. letters Display     | When the page is loaded, the word length is displayed                               | Error message is displayed as expected           | Pass        |
-| 4     | ASCII Art (Ship)        | ASCII art for sinking ship is displayed correctly based on chosen lives             | ASCII Art loads as expected                      | Pass        |
-| 5     | User Input (Validation) | Checks if user input is in alphabet, if not, error message is displayed             | Error message is displayed as expected           | Pass        |
-| 6     | User Input (Validation) | Validates the length and uniqueness of the input, offering feedback accordingly.    | Loops function as expected| Pass        |
-| 7     | User Input (Validation) | Checks if the input matches the word length and hasn't been attempted, and provides feedback if it's the correct word.|The displayed feedback aligns with the expected correctness of the input. | Pass |
-| 8     | User Input (Validation) | Correctly guessing the word leads to the game ending with a congratulatory message. Incorrect guesses result in life loss, and the guessed word is displayed. The game proceeds to the next attempt. | Successful word guesses lead to the anticipated end-of-game screen; unsuccessful ones deduct a life and proceed to the next attempt if lives remain. | Pass |
-| 9     | User Input (Validation) | Checks if the input matches the word length and hasn't been attempted, and provides feedback if it's the correct word.|The displayed feedback aligns with the expected correctness of the input. | Pass |
+| 4     | ASCII Art (Ship)        | ASCII art for sinking ship is displayed correctly based on lives remaining          | ASCII Art loads as expected                      | Pass        |
+| 5     | Input Validation - Guess| Checks if user input is in alphabet, if not, error message is displayed             | Error message is displayed as expected           | Pass        |
+| 6     | Input Validation - Guess| Validates the length and uniqueness of the input, offering feedback accordingly.    | Loops function as expected| Pass        |
+| 7     | Input Validation - Guess| Checks if the input matches the word length and hasn't been attempted, and provides feedback if it's the correct word.|The displayed feedback aligns with the expected correctness of the input. | Pass |
+| 8     | Input Validation - Guess| Correctly guessing the word leads to the game ending with a congratulatory message. Incorrect guesses result in life loss, and the guessed word is displayed. The game proceeds to the next attempt. | Successful word guesses lead to the anticipated end-of-game screen; unsuccessful ones deduct a life and proceed to the next attempt if lives remain. | Pass |
+| 9     | ASCII Art Progression   | If the guessed letter or word proves to be incorrect, causing a reduction in their remaining lives, the ASCII art will then depict the corresponding image based on the updated number of lives. |The ASCII art image adapts as expected | Pass |
+| 10    | Input Validation - Guess| If the user input consists of more than one letter but does not match the length of the secret word, an error message will be shown.| Error message is displayed as expected | Pass |
+| 11    | Input Validation - Guess| If the input consists of a single letter, the system verifies whether the letter has been previously attempted. If it has, feedback is provided.|The feedback is returned as expected. | Pass |
+| 12    | Input Validation - Guess| If the input comprises a single letter and has not been attempted before, the system examines whether the letter is present in the secret word and provides feedback accordingly.| The feedback is returned as expected. | Pass |
+| 13    | Secret Word | If the entered letter is part of the word and the word hasn't been completely guessed, the system reveals the letter in the "Secret Word" and proceeds to the next attempt. If the letter is not in the word, the player loses a life, and the guessed letter is recorded for reference in subsequent attempts. If the player exhausts all lives, they are directed to the appropriate End of Game Screen with a "Game Over" message.| If the guessed letter is correct, it is appropriately displayed in the field, and the system proceeds to the next attempt. If the letter is incorrect, the player loses a life as anticipated, and they advance to the next attempt if they still have remaining lives. | Pass |
+| 14     | ASCII Art Progression   | If the guessed letter or word proves to be incorrect, causing a reduction in their remaining lives, the ASCII art will then depict the corresponding image based on the updated number of lives. |The ASCII art image adapts as expected | Pass |
+| 15    | Remaining Lives         | If the suggested letter or word is incorrect, decreases the number of lives by one and shows the updated count if there are more lives left. If the player has exhausted all lives, the game concludes. | The displayed number of lives aligns with expectations unless the player has none remaining. | Pass |
+| 16    | Used Letters Display    | The attempted letters are stored and presented alphabetically if there is more than one.| Used Letters were displayed as anticipated | Pass |
+| 17    | Play Game Loop          | The game follows this sequence until either the correct word is guessed or the player runs out of lives. | Loop functions as expected | Pass |
+| 18    | Clear Terminal | The terminal is cleared when the function is called | The terminal clears as expected | Pass |
+
+### End Game Page
+| Step  | Description             | Anticipated Outcome                                                                    | Observed Outcome                                        | Status      |
+| ----- | ----------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------- | ----------- |
+| 1     | End Game Page           | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
+| 2     | Display Title ASCII     | Title loads with ASCII Art                                                             | ASCII Art loads as expected                             | Pass        |
+| 3     | Font Styles             | Font styles are displayed correctly                                                    | Font styles are displayed as expected                   | Pass        |
+| 4     | Correct Secret Word     | Correct secret word is displayed with appropriate congratulations/good effort message. | Correct word is displayed, paired with correct message. | Pass        |
+| 5     | Restart Game            | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
+| 6     | User Input              | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
+| 7     | Input Validation        | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
+| 8     | Input Validation        | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
+| 9     | User Input              | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
+
 
 ## Deployment
 
@@ -233,6 +256,9 @@ You can fork a GitHub Repository to make a copy of the original repository to vi
 
 - <a href="https://codeinstitute.net/" target="_blank">Code Institute, Various Tutors</a>
   - Helped me to find solutions to many of my coding issues/queries and allowed me to refer to specific modules for further guidance.
+
+- <a href="https://www.youtube.com/watch?v=m4nEnsavl6w" target="_blank">YouTube (Kite)</a>
+  - This video walkthrough helped me to understand the fundamental requirements of this application and my code has been heavily influenced by this video.
 
 - <a href="https://www.geeksforgeeks.org/clear-screen-python/" target="_blank">GeeksforGeeks</a>
     - Provided the code for clearing the terminal.

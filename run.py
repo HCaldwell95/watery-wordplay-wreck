@@ -137,13 +137,15 @@ def play_game(word, number_of_lives):
                       f'Invalid input: you have entered "{guess}".')
                 print("Please enter a letter." + styles.END)
 
-            # Checks if the input is a word of the correct length
+            # Validates input as an alphabetical word of the correct length
             elif len(guess) == len(word) and guess.isalpha():
+
+                # Checks if input has already been used and alerts user
                 if guess in used_letters:
                     print(styles.YELLOW + f'You have already tried "{guess}".')
                     print("Please try again!" + styles.END)
 
-                # Decreases number of lives and updates the use words list
+                # Decrement lives, updates used letters and provides feedback
                 elif guess != word:
                     if guess not in used_words:
                         number_of_lives -= 1
@@ -153,6 +155,8 @@ def play_game(word, number_of_lives):
                               styles.END)
                         if number_of_lives > 0:
                             print(f"You have {number_of_lives} attempts left.")
+
+                    # Checks if input has already been used and alerts user
                     else:
                         print(styles.YELLOW +
                               f'You have already tried "{guess}".')
@@ -174,7 +178,7 @@ def play_game(word, number_of_lives):
                     print(styles.YELLOW + f'You have already tried "{guess}".')
                     print("Please try again!" + styles.END)
 
-                # Decrements lives, updates used letters and provides feedback
+                # Decrement lives, updates used letters and provides feedback
                 elif guess not in word:
                     number_of_lives -= 1
                     used_letters.append(guess)
@@ -240,6 +244,7 @@ def play_game(word, number_of_lives):
         print("Thank you for playing our Watery Wordplay Wreck!\n")
         draw_game_over()
 
+    # Asks the player if they would like to play the game again.
     restart_game()
 
 
