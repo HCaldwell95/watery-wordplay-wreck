@@ -108,9 +108,8 @@ def restart_game():
 
 def play_game(word, number_of_lives):
     """
-    Performs the core functions of the game
+    # Performs the core functions of the game
     """
-    
     # Displays the secret word to the user via underscores
     secret_word = "_" * len(word)
 
@@ -132,7 +131,7 @@ def play_game(word, number_of_lives):
                       styles.END + ":\n").upper()
         clear_terminal()
         try:
-            # Checks if the input is not a letter
+            # Checks if the input is not in the alphabet
             if not guess.isalpha():
                 print(styles.YELLOW +
                       f'Invalid input: you have entered "{guess}".')
@@ -146,12 +145,18 @@ def play_game(word, number_of_lives):
 
                 # Decreases number of lives and updates the use words list
                 elif guess != word:
-                    number_of_lives -= 1
-                    used_words.append(guess)
-                    print(styles.RED + f'Sorry, "{guess}" is not the word.' +
-                          styles.END)
-                    if number_of_lives > 0:
-                        print(f"You have {number_of_lives} attempts left.")
+                    if guess not in used_words:
+                        number_of_lives -= 1
+                        used_words.append(guess)
+                        print(styles.RED +
+                              f'Sorry, "{guess}" is not the word.' +
+                              styles.END)
+                        if number_of_lives > 0:
+                            print(f"You have {number_of_lives} attempts left.")
+                    else:
+                        print(styles.YELLOW +
+                              f'You have already tried "{guess}".')
+                        print("Please try again!" + styles.END)
                 else:
                     secret_word = word
                     break
@@ -163,7 +168,7 @@ def play_game(word, number_of_lives):
                 print("Please enter a letter " +
                       f"or word containing {len(word)} letters." + styles.END)
 
-            # Checks if the input is a single letter
+            # Checks if the input is a single letter and if already used
             elif len(guess) == 1 and guess.isalpha():
                 if guess in used_letters:
                     print(styles.YELLOW + f'You have already tried "{guess}".')
