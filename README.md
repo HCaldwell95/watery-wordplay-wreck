@@ -2,9 +2,9 @@
 
 Welcome to my third milestone project, Watery Wordplay Wreck.
 
-Watery Wordplay Wreck is a word guessing game built with Python. It is a <a href="https://en.wikipedia.org/wiki/Hangman_(game)" target="_blank">Hangman</a> game in the style of a sinking ship to represent the progress of the game.
+Watery Wordplay Wreck is a word-guessing game built with Python. It is a <a href="https://en.wikipedia.org/wiki/Hangman_(game)" target="_blank">Hangman</a> inspired game in the style of a sinking ship to represent the progress of the game.
 
-The user is able to choose the number of lives per game to set the difficulty. Through the process of making guesses, either letter by letter or by attempting to guess the entire word, the user endeavors to identify the correct word before the ship succumbs to the depths of the sea. With each unsuccessful attempt, the user loses a life, leading to the gradual sinking of the ship.
+The user can choose the number of lives per game to set the difficulty. Through the process of making guesses, either letter by letter or by attempting to guess the entire word, the user endeavors to identify the correct word before the ship succumbs to the depths of the sea. With each unsuccessful attempt, the user loses a life, resulting in the gradual sinking of the ship.
 
 The primary objective of this project is to showcase my comprehension and application of the Python modules I have studied thus far. By integrating them into a real-world project, I aim to demonstrate my proficiency in design and development. This terminal application, constructed using a template provided by <a href="https://github.com/Code-Institute-Org/p3-template" target="_blank">Code Institute</a> along with my Python code, serves as a tangible representation of my acquired skills.
 
@@ -14,18 +14,48 @@ I appreciate you taking the time to explore my project, and I sincerely hope you
 
 <a href="https://github.com/HCaldwell95/watery-wordplay-wreck" target="_blank">View the GitHub repository here CHANGE TO CORRECT REPOSITORY</a>
 
+<em>Note: While developing this project, I recognised shortcomings in my demonstration of version control. To address this, I have reconstructed the repository, ensuring proper version control practices are now in place. You can find a link to the previous repository <a href="" target="_blank"> here</a>.
+
+# Table of Contents
+
+1. [Introduction](#introduction)
+2. [UX - User Experience Design](#ux---user-experience-design)
+   1. [User Stories](#user-stories)
+3. [Logic Flow](#logic-flow)
+4. [Existing Features](#existing-features)
+   1. [Welcome Page](#welcome-page)
+   2. [Rules Page](#rules-page)
+   3. [Game Screen](#game-screen)
+   4. [End Game Page](#end-game-page)
+5. [Python Libraries Used](#python-libraries-used)
+6. [Technologies Used](#technologies-used)
+   1. [Programming Language](#programming-language)
+   2. [Tools Used To Develop The Game](#tools-used-to-develop-the-game)
+7. [Testing](#testing)
+   1. [Code Validation](#code-validation)
+   2. [Manual Testing](#manual-testing)
+8. [Deployment](#deployment)
+   1. [Preparation](#preparation)
+   2. [Deploying the Application to Heroku](#deploying-the-application-to-heroku)
+   3. [Forking the Github Repository](#forking-the-github-repository)
+   4. [Cloning the Repository on GitHub](#cloning-the-repository-on-github)
+9. [Credits](#credits)
+   - [Code](#code)
+   - [Media](#media)
+10. [Disclaimer](#disclaimer)
+
 ## UX - User Experience Design
 
 ### User Stories
 
 As a first-time user:
   - I would like to understand how the game works and how to play with ease.
-  - I would like to be able to adjust the difficulty to suit my level.
-  - I would like instant feedback for each of my guesses while playing the game.
-  - I would like to see any letters or words that I have already tried to avoid suggesting them again.
-  - I would like to see an error message if my guess is invalid and I would like to be told why.
-  - I would like to be able to monitor my progress during the game.
-  - I would like to have the option to play the game again or finish my session when the game ends.
+  - I would like the flexibility to tailor the difficulty to match my skill and comfort.
+  - I would like prompt feedback for every guess I make during the gameplay.
+  - I would like visibility of any letters or words previously used to avoid using them again.
+  - I expect to receive an error message with an explanation if my guess is deemed invalid.
+  - I wish to monitor my progress throughout the game.
+  - I would like the option to either replay the game or conclude my session once the game concludes.
 
 As a returning user:
   - I would like to be able to relearn the game quickly and easily.
@@ -40,18 +70,18 @@ To organise the logic flow of the game, I created a flow chart that outlines the
 
 ### Welcome Page
 
-This is the welcome page for the game. It presents the game title in the form of ASCII Art. On this page, the game prompts the user to press ENTER to begin the game.
+This serves as the initial greeting for the game, featuring the game title rendered in ASCII Art. Users are prompted to initiate the game by pressing ENTER.
 
 ### Rules Page
 
-Once the user has pressed ENTER, they will be taken to the Rules Page. This page consists of:
-  -  A 'RULES' Title - again presented in ASCII Art.
-  -  The rules of the game and explanation of the goal.
-  -  A prompt for the user to select their difficulty by selecting the amount of lives they have.
+Once the user has pressed ENTER, the terminal clears and they will be taken to the Rules Page. This page consists of:
+  -  A 'RULES' Title - again rendered in ASCII Art.
+  -  The rules of the game and explanation of the objective.
+  -  A user prompt to select their difficulty by selecting the desired number of lives.
 
 ### Game Screen
 
-After the user has chosen their desired number of lives, the game initiates. A randomly selected nautical-themed word is assigned for each game, and the initial screen consistently displays a visual representation of their remaining lives through a sinking ship image, along with the number of letters in the secret word.
+Upon selecting the preferred number of lives, the game commences. Each session introduces a randomly chosen nautical-themed word, presenting a sinking ship image that dynamically reflects the remaining lives. The screen consistently displays the number of letters in the secret word.
 
 At the bottom of the page, the user is prompted to input either a letter or a word.
 
@@ -62,24 +92,27 @@ At the bottom of the page, the user is prompted to input either a letter or a wo
 
 
 ### End Game Page
-Upon completion of the game, the player is directed to the End of Game Screen.
+Upon completion of the game, users are transitioned to the End Game Page.
 
-If the word is successfully guessed, the message "Congratulations!" is showcased, incorporating ASCII art to heighten the dramatic effect and extend congratulations to the player.
-
-# IMAGE
-
-If the user fails to guess the word before they run out of lives, the "Game Over" message is displayed along with an ASCII Art image of the ocean and no ship. The correct word is also revealed to the user.
+If the word is successfully guessed, the screen showcases a triumphant "Congratulations!" message accompanied by ASCII Art to reiterate their success.
 
 # IMAGE
 
-On this final page, the user is presented with the option to either replay the game or conclude it. Opting to play again returns the user to the Rules Page and prompts them to choose the number of lives for a new game. Selecting to finish the game redirects them to the Welcome Page.
+In the event of an unsuccessful guess before exhausting lives, the "Game Over" message appears, complemented by an ASCII Art depiction of an ocean without a ship. The correct word is then revealed to the user.
+
+# IMAGE
+
+On this conclusive page, users can either:
+  - opt to replay the game, which will redirect them to the Rules Page to choose new lives
+  <br>or
+  -  conclude the game, redirecting them back to the Welcome Page.
 
 
 ## Python Libraries Used 
 ### random:
   - The random library was incorporated to allow the application to randomly select a word from words.py for each game instance.
 ### os:
-  - The os library facilitated communication with the operating system to refresh the terminal at various points throughout the game, enhancing the player's experience with a neater and more enjoyable interface.
+  - The os library facilitated communication with the operating system to refresh the terminal at various points throughout the game. This enhanced the user's experience by providing a cleaner and more enjoyable interface.
 
 ## Technologies Used
 ### Programming Language
@@ -263,6 +296,9 @@ You can fork a GitHub Repository to make a copy of the original repository to vi
 - <a href="https://www.geeksforgeeks.org/clear-screen-python/" target="_blank">GeeksforGeeks</a>
     - Provided the code for clearing the terminal.
 
+- <a href="https://www.studytonight.com/python-howtos/how-to-print-colored-text-in-python">Study Tonight</a>
+    - Provided the ANSI code in Python required to style the fonts with colours. 
+
 - <a href="https://stackoverflow.com" target="_blank">Stack Overflow</a>
     - <a href="https://stackoverflow.com/questions/39378020/how-to-display-table-in-readme-md-file-in-github" target="_blank">(Source)</a> - Provided the code to create tables in the README.md.
     - <a href="https://stackoverflow.com/questions/28607382/is-it-possible-to-create-a-toggle-switch-in-markdown" target="_blank">(Source)</a> Provided the code for adding toggle switches in README.md.
@@ -271,3 +307,13 @@ You can fork a GitHub Repository to make a copy of the original repository to vi
 
 - <a href="https://patorjk.com/software/taag/#p=testall&f=Slant%20Relief&t=Watery%20Wordplay" target="_blank">Patorjk</a>
     - Provided all of the Ascii Art for the titles throughout the application.
+
+## Disclaimer
+
+This project, Watery Wordplay Wreck, is created solely for educational purposes. The content, code, and any associated materials within this project are designed to showcase the developer's understanding and application of programming concepts and should be treated as such.
+
+This project is not intended for commercial use, distribution, or any other purpose beyond educational and learning objectives. Any resemblance to real events, individuals, or entities is purely coincidental.
+
+The developer and contributors disclaim any responsibility for how this project is used outside of its intended educational context. Users are encouraged to respect ethical guidelines and legal considerations when interacting with or utilizing the content of this project.
+
+By accessing and using this project, you acknowledge and agree to use it exclusively for educational and learning purposes.
