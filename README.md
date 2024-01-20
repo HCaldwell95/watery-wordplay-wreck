@@ -32,7 +32,7 @@ As a returning user:
   - I would like the challenge to remain and encounter different words than my last visit.
 
 ## Logic Flow
-For organizing the logic flow of the game, I created a flow chart that outlines the individual steps. Each step is color-coded to differentiate between various types of activities.
+To organise the logic flow of the game, I created a flow chart that outlines the individual steps. Each step is color-coded to differentiate between various types of activities.
 
 <img src="./docs/flow-chart.png" alt="Image of the project flowchart">
   
@@ -40,16 +40,14 @@ For organizing the logic flow of the game, I created a flow chart that outlines 
 
 ### Welcome Page
 
-The is the welcome page for the game. It presents the game title in the form of ASCII Art. On this page, the game prompts the user to press ENTER to begin the game.
+This is the welcome page for the game. It presents the game title in the form of ASCII Art. On this page, the game prompts the user to press ENTER to begin the game.
 
 ### Rules Page
 
 Once the user has pressed ENTER, they will be taken to the Rules Page. This page consists of:
   -  A 'RULES' Title - again presented in ASCII Art.
-  -  The rules of the game.
+  -  The rules of the game and explanation of the goal.
   -  A prompt for the user to select their difficulty by selecting the amount of lives they have.
-
-
 
 ### Game Screen
 
@@ -177,40 +175,39 @@ This application has been deployed using Heroku. Link to live project - Watery W
 The steps for deploying the application are as follows:
 
 ### Preparation:
-1. In order for input methods to work correctly in the terminal of the deployed website, add a new line character \n at the end of each text inside the input method so that the input request will be displayed in the terminal.
+1. Ensure proper functionality of input methods in the terminal on the deployed website by adding a new line character \n at the end of each text inside the input method. This ensures that the input request will be correctly displayed in the terminal.
 
-2. If there are dependencies to run the application on Heroku, run pip3 freeze > requirements.txt command which will update the "requirements.txt" file to include those dependencies.
+2. If there are dependencies required for running the application on Heroku, update the "requirements.txt" file by running the command pip3 freeze > requirements.txt.
 
 3. Push all updates to GitHub.
 
 ### Deploying the Application to Heroku:
 1. Log into Heroku website.
 
-2. From the Dashboard page, select "New" and then "Create new app."
+2. From the Dashboard page, click on "New" and then select "Create new app."
 
-3. Assign a name for the application, select the region and then select "Create app."
+3. Assign a name for the application, choose the region and click "Create app."
 
-4. Once the application is created, from the submenu at the top, select "Settings" and then "Reveal Config Vars" to set up config vars.
+4. Once the application is created, go to the "Settings" tab and then "Reveal Config Vars" to set up config vars.
 
-5. In the KEY input field, enter "PORT" all in capitals and enter "8000" for the VALUE input field and select "Add." If there are other config vars required to run the application, add those here. For this application, there is no other config var required.
+5. In the KEY input field, enter "PORT" in all capitals, and set the VALUE to "8000". Click "Add." If there are other config vars required to run the application, add them here. This application does not require additional config vars.
 
-6. Scroll down to the "Buildpacks" section and select "Add buildpack."
+6. Scroll down to the "Buildpacks" section and click "Add buildpack."
 
-7. Add buildpacks required to run the application. For this application, "Python" and "Nodejs" are required.
+7. Add the necessary buildpacks for the application. For this project, "Python" and "Nodejs" are required.
 
-    The order of the buildpacks is important. "Python" should be the first and then "Nodejs." If they are not in the correct order, click and drag to change.
+    It is crucial to maintain the correct order of buildpacks. "Python" should be the first, followed by "Nodejs." Adjust the order by clicking and dragging if needed.
 
-8. Select "Deploy" from the submenu at the top.
-    - Under the "Deployment method" section, select "GitHub" to connect to GitHub.
-    - Under the "Connect to GitHub" section, enter the name of the repository and select "Search."
-    - Once the repository is located, select "Connect" to connect the repository to the application within Heroku.
+8. Click "Deploy" in the top submenu.
+    - Under "Deployment method", select "GitHub" to connect to GitHub.
+    - In the "Connect to GitHub" section, enter the repository name and click "Search."
+    - Once the repository is located, click "Connect" to link the repository to the Heroku application.
 
-9. Select either "Enable Automatic Deploys" which will deploy a new version of the application every time changes are pushed to GitHub or opt for "Manual Deploy." For this application, "Automatic Deploys" was selected.
+9. Choose either "Enable Automatic Deploys" to deploy a new version automatically whenever changes are pushed to GitHub or select "Manual Deploy." This application has "Automatic Deploys" enabled.
 
-10. Once the application is deployed, scroll back to the top of the screen and select "Open app."
-Image for this step
+10. After the deployment, scroll to the top of the screen and click "Open app."
 
-    If "Enable Automatic Deploys" has been selected, the application will be built and available after the next changes are pushed to GitHub.
+    If "Enable Automatic Deploys" is selected, the application will be built and available after the next changes are pushed to GitHub.
 
 ### Forking the Github Repository:
 
@@ -233,14 +230,15 @@ You can fork a GitHub Repository to make a copy of the original repository to vi
 
 #### Code
 
-- <a href="https://codeinstitute.net/">Code Institute, Various Tutors</a>
+- <a href="https://codeinstitute.net/" target="_blank">Code Institute, Various Tutors</a>
   - Helped me to find solutions to many of my coding issues/queries and allowed me to refer to specific modules for further guidance.
 
 - <a href="https://www.geeksforgeeks.org/clear-screen-python/" target="_blank">GeeksforGeeks</a>
     - Provided the code for clearing the terminal.
 
-- <a href="https://stackoverflow.com/questions/39378020/how-to-display-table-in-readme-md-file-in-github">Stack Overflow</a>
-    - Provided the code to create tables in the README.md
+- <a href="https://stackoverflow.com" target="_blank">Stack Overflow</a>
+    - <a href="https://stackoverflow.com/questions/39378020/how-to-display-table-in-readme-md-file-in-github" target="_blank">(Source)</a> - Provided the code to create tables in the README.md.
+    - <a href="https://stackoverflow.com/questions/28607382/is-it-possible-to-create-a-toggle-switch-in-markdown" target="_blank">(Source)</a> Provided the code for adding toggle switches in README.md.
 
 ### Media
 
