@@ -92,9 +92,12 @@ def print_game_state(secret_word, used_letters, used_words, num_of_lives):
     else:
         print("Game Over")
 
+    # Displays the secret word area and word length
     print("\nYour " + styles.BOLD + str(len(secret_word)) +
           " LETTER " + styles.FIN + "word to guess is: " +
           secret_word)
+
+    # Displays lists of used letters and words to aid the user
     print(styles.BLUE + "Attempted letters: ",
           ", ".join(sorted(used_letters)) + styles.FIN)
     print(styles.BLUE + "Attempted words: ",
@@ -144,7 +147,7 @@ def restart_game():
 
 def play_game(word, num_of_lives):
     """
-    Plays the Watery Wordplay Wreck game.
+    Initiates and manages a round of the game
     """
     secret_word = "_" * len(word)
     used_letters = []
@@ -158,17 +161,20 @@ def play_game(word, num_of_lives):
 
     draw_sinking_ship(num_of_lives)
 
+    # Main game loop
     while num_of_lives > 0:
         guess = input(f"Please enter a {styles.BOLD}LETTER{styles.FIN} "
                       f"or a {styles.BOLD}WORD{styles.FIN}:\n").upper()
         clear_terminal()
 
         try:
+            # Checks if the input is not in the alphabet
             if not guess.isalpha():
                 print(styles.YELLOW +
                       f'Invalid input: "{guess}" is not a valid letter.')
                 print("Please enter a letter." + styles.FIN)
 
+            # Checks if the user input is a word of the correct length
             elif len(guess) == len(word) and guess.isalpha():
                 if guess in used_letters:
                     print(styles.YELLOW +
@@ -177,6 +183,8 @@ def play_game(word, num_of_lives):
                     print("Please enter a letter " +
                           f"or word containing {len(word)} letters." +
                           styles.FIN)
+
+                # Decrement lives, updates used letters and provides feedback 
                 elif guess != word:
                     if guess not in used_words:
                         num_of_lives -= 1
@@ -184,6 +192,8 @@ def play_game(word, num_of_lives):
                         print(styles.RED +
                               f'Sorry, "{guess}" is not the word.' +
                               styles.FIN)
+
+                    # Checks if input has already been used and alerts user
                     else:
                         print(styles.YELLOW +
                               f'You have already tried "{guess}".')
@@ -192,21 +202,26 @@ def play_game(word, num_of_lives):
                     secret_word = word
                     break
 
+            # Check if the user input is not a single letter or alphabetic
             elif len(guess) != 1 or not guess.isalpha():
                 print(styles.YELLOW +
                       f"Invalid input: you have entered {len(guess)} letters.")
                 print("Please enter a letter " +
                       f"or word containing {len(word)} letters." + styles.FIN)
 
+            # Checks if input has already been used and alerts user
             elif guess in used_letters:
                 print(styles.YELLOW + f'You have already tried "{guess}".')
                 print("Please try again!" + styles.FIN)
 
+            # Decrement lives, updates used letters and provides feedback
             elif guess not in word:
                 num_of_lives -= 1
                 used_letters.append(guess)
                 print(styles.RED +
                       f'Sorry, "{guess}" is not in the word.' + styles.FIN)
+
+            # Updates the secret word with the correct letters
             else:
                 used_letters.append(guess)
                 print(styles.GREEN + f'"{guess}" IS in the word!')
@@ -221,6 +236,7 @@ def play_game(word, num_of_lives):
                 if "_" not in secret_word:
                     break
 
+        # Handles invalid data input
         except ValueError as error:
             print(styles.YELLOW +
                   f'Invalid data: {error}, please try again.\n"' +
