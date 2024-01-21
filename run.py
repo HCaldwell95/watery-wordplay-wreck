@@ -60,6 +60,15 @@ def choose_num_of_lives():
     Prompts the user to choose the number of lives for gameplay,
     enabling them to set the difficulty level.
     This loop persists until a valid input is submitted.
+
+    This function serves to customise the difficulty level of the game by
+    allowing the user to choose the number of lives. It presents a menu of
+    options, each representing a difficulty level, and prompts the user to
+    input their choice.
+
+    The function enters a loop, ensuring that the user provides a valid input.
+    The loop displays the available difficulty options and prompts the user
+    until a valid selection is made.
     """
     options = {"8": "Easy", "6": "Medium", "4": "Hard"}
 
@@ -86,18 +95,21 @@ def get_random_word():
 def print_game_state(secret_word, used_letters, used_words, num_of_lives):
     """
     Prints the current state of the game.
+
+    This function displays crucial information about the current state of
+    the game to aid the player in their progress. It includes the number
+    of attempts remaining (num_of_lives), the representation of the word
+    to guess (secret_word), and the lists of attempted letters and words.
     """
     if num_of_lives > 0:
         print(f"You have {num_of_lives} attempts left.\n")
     else:
         print("Game Over")
 
-    # Displays the secret word area and word length
     print("\nYour " + styles.BOLD + str(len(secret_word)) +
           " LETTER " + styles.FIN + "word to guess is: " +
           secret_word)
 
-    # Displays lists of used letters and words to aid the user
     print(styles.BLUE + "Attempted letters: ",
           ", ".join(sorted(used_letters)) + styles.FIN)
     print(styles.BLUE + "Attempted words: ",
@@ -107,6 +119,16 @@ def print_game_state(secret_word, used_letters, used_words, num_of_lives):
 def determine_game_outcome(secret_word, actual_word, num_of_lives):
     """
     Determines the game outcome and displays the appropriate message.
+
+    This function compares the player's guessed word (secret_word) with the
+    actual word (actual_word) to determine the outcome of the game. If the
+    guessed word matches the actual word, it congratulates the player and
+    displays a victory message along with an animated depiction of a winning
+    scenario using draw_game_winner(). If there is no match, it acknowledges
+    the player's effort, reveals the correct word, and displays a game over
+    message using draw_game_over().
+
+    The function also clears the terminal before presenting the outcome.
     """
     clear_terminal()
 
@@ -124,6 +146,14 @@ def determine_game_outcome(secret_word, actual_word, num_of_lives):
 def restart_game():
     """
     Asks the user if they would like to play the game again.
+
+    This function presents the user with the option to restart the game.
+    It provides visual prompts for the user to enter 'Y' for 'Yes'
+    or 'N' for 'No'. Depending on the user's choice, it either restarts the
+    game with new settings or returns to the main title page.
+
+    The function uses a loop to handle invalid inputs and ensures the user
+    provides a valid response before proceeding.
     """
 
     while True:
@@ -149,11 +179,15 @@ def play_game(word, num_of_lives):
     """
     Initiates and manages a round of the game
     """
+
+    # Initialises variables for the current game round
     secret_word = "_" * len(word)
     used_letters = []
     used_words = []
 
     clear_terminal()
+
+    # Displays the game introduction and secret word information
     print("\nLet's play the Watery Wordplay Wreck! Good Luck.")
     print("\nThis word has " + styles.BLUE_BOLD + str(len(word)) +
           styles.FIN + " letters.")
@@ -163,6 +197,8 @@ def play_game(word, num_of_lives):
 
     # Main game loop
     while num_of_lives > 0:
+
+        # Gets user input for a letter or word and converts it to uppercase
         guess = input(f"Please enter a {styles.BOLD}LETTER{styles.FIN} "
                       f"or a {styles.BOLD}WORD{styles.FIN}:\n").upper()
         clear_terminal()
@@ -184,7 +220,7 @@ def play_game(word, num_of_lives):
                           f"or word containing {len(word)} letters." +
                           styles.FIN)
 
-                # Decrement lives, updates used letters and provides feedback 
+                # Decrement lives, updates used letters and provides feedback
                 elif guess != word:
                     if guess not in used_words:
                         num_of_lives -= 1
@@ -198,6 +234,8 @@ def play_game(word, num_of_lives):
                         print(styles.YELLOW +
                               f'You have already tried "{guess}".')
                         print("Please try again!" + styles.FIN)
+
+                # Assigns the correct word to secret_word and exits loop
                 else:
                     secret_word = word
                     break
@@ -221,18 +259,23 @@ def play_game(word, num_of_lives):
                 print(styles.RED +
                       f'Sorry, "{guess}" is not in the word.' + styles.FIN)
 
-            # Updates the secret word with the correct letters
+            # Checks if the input letter is in the word and provides feedback
             else:
                 used_letters.append(guess)
                 print(styles.GREEN + f'"{guess}" IS in the word!')
                 print("Good job!" + styles.FIN)
 
+                # Updates the secret word with the correct letters
                 word_as_list = list(secret_word)
                 indices = [
                         i for i, letter in enumerate(word) if letter == guess]
+
+                # Replaces underscores with correct letters in the word
                 for index in indices:
                     word_as_list[index] = guess
                 secret_word = "".join(word_as_list)
+
+                # Exits loop if all letters have been guessed
                 if "_" not in secret_word:
                     break
 
@@ -243,11 +286,16 @@ def play_game(word, num_of_lives):
                   styles.FIN)
             continue
 
+        # Displays the current state of the game
         print_game_state(secret_word, used_letters, used_words, num_of_lives)
 
+        # Draws the sinking ship based on the user's remaining lives
         draw_sinking_ship(num_of_lives)
 
+    # Determines and displays the game outcome
     determine_game_outcome(secret_word, word, num_of_lives)
+
+    # Asks the user if they want to play again
     restart_game()
 
 
@@ -256,6 +304,15 @@ def start_game():
     Initialises a new game of Watery Wordplay Wreck by setting up the game
     parameters, including the number of lives and selecting a random word
     to be guessed.
+
+    This function serves as the entry point for starting a new game. It calls
+    the choose_num_of_lives function to allow the user to customize the
+    difficulty level by selecting the number of lives. It then retrieves a
+    random word using get_random_word and initiates the game using play_game
+    with the selected parameters.
+
+    This modular approach enhances readability and maintainability by
+    separating the game setup from the actual gameplay logic.
     """
     lives = choose_num_of_lives()
     random_word = get_random_word()
