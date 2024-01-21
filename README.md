@@ -62,7 +62,7 @@ As a returning user:
   - I would like the challenge to remain and encounter different words than my last visit.
 
 ## Logic Flow
-To organise the logic flow of the game, I created a flow chart that outlines the individual steps. Each step is color-coded to differentiate between various types of activities.
+To organise the logical flow of the game, I created a flow chart that outlines the individual steps. Each step is color-coded to differentiate between various types of activities.
 
 <img src="./docs/flow-chart.png" alt="Image of the project flowchart" width="700">
   
@@ -118,7 +118,7 @@ If a word with the same number of letters as the target word is suggested, it is
 
 After the first attempt, the letters and words that have already been used are displayed, offering assistance to the user.
 
-The user then continues to guess one letter at a time or opt to propose the entire word until either the correct word is guessed, leading to the game's conclusion, or the user exhausts all lives. 
+The user then continues to guess one letter at a time or opts to propose the entire word until either the correct word is guessed, leading to the game's conclusion, or the user exhausts all lives. 
 
 <img src="./docs/attempted-letters-and-words.png" width="700">
 
@@ -146,7 +146,7 @@ On this conclusive page, users can either:
 
 ### Future Features to Implement
 
-The game currently lacks personalisation and ownership. I aim to implement a feature enabling users to input their username, and their highest (and lowest) scores would be stored in a database, visible to all users through a leaderboard-style interface. This addition, featuring a leaderboard displaying the names and scores of past players, will enhance player engagement and promote continued gameplay.
+The game currently lacks personalisation and ownership. I aim to implement a feature enabling users to input their usernames, and their highest (and lowest) scores would be stored in a database, visible to all users through a leaderboard-style interface. This addition, featuring a leaderboard displaying the names and scores of past players, will enhance player engagement and promote continued gameplay.
 
 ## Python Libraries Used 
 ### random:
@@ -159,15 +159,15 @@ The game currently lacks personalisation and ownership. I aim to implement a fea
   - Python was used to build the main content of the game.
 
 ### Tools Used To Develop The Game
-  - <a href="https://www.gitpod.io/" target="_blank">Gitpod</a> served as the platform for creating, editing and previewing code throughout the development process.
+  - <a href="https://www.gitpod.io/" target="_blank">Gitpod</a> served as the platform for creating, editing, and previewing code throughout the development process.
   - <a href="https://git-scm.com/" target="_blank">Git</a> was employed for version control, managing and tracking changes in the codebase.
   - <a href="https://github.com/" target="_blank">GitHub</a> was utilised to store both the repository and the codes.
   - <a href="https://dashboard.heroku.com/apps" target="_blank">Heroku</a> was chosen as the deployment platform for the application.
 
 ### Other Online Resources
-  - <a href="https://lucid.app" target="_blank">Lucid Charts</a> was used to plan and create the logic flow of the game.
+  - <a href="https://lucid.app" target="_blank">Lucid Charts</a> was used to plan and create the logical flow of the game.
   - <a href="https://app.grammarly.com/" target="_blank">Grammarly</a> was used to proof all files and remove grammatical and typographical errors.
-  - <a href="https://www.notion.so/" target="_blank">Notion</a> was used to make notes and to store essential images througout the development process. Notion also handled the compression of images in the process.
+  - <a href="https://www.notion.so/" target="_blank">Notion</a> was used to make notes and to store essential images throughout the development process. Notion also handled the compression of images in the process.
 
 ## Testing
 
@@ -245,7 +245,7 @@ The image below demonstrates the input validation in action. If the user's input
 | 2     | Font Styles             | Font styles are displayed correctly                                                 | Font styles are displayed as expected            | Pass        |
 | 3     | No. letters Display     | When the page is loaded, the word length is displayed                               | Error message is displayed as expected           | Pass        |
 | 4     | ASCII Art (Ship)        | ASCII art for sinking ship is displayed correctly based on lives remaining          | ASCII Art loads as expected                      | Pass        |
-| 5     | Input Validation - Guess| Checks if user input is in alphabet, if not, error message is displayed             | Error message is displayed as expected           | Pass        |
+| 5     | Input Validation - Guess| Checks if user input is in the alphabet, if not, an error message is displayed      | Error message is displayed as expected           | Pass        |
 | 6     | Input Validation - Guess| Validates the length and uniqueness of the input, offering feedback accordingly.    | Loops function as expected| Pass        |
 | 7     | Input Validation - Guess| Checks if the input matches the word length and hasn't been attempted, and provides feedback if it's the correct word.|The displayed feedback aligns with the expected correctness of the input. | Pass |
 | 8     | Input Validation - Guess| Correctly guessing the word leads to the game ending with a congratulatory message. Incorrect guesses result in life loss, and the guessed word is displayed. The game proceeds to the next attempt. | Successful word guesses lead to the anticipated end-of-game screen; unsuccessful ones deduct a life and proceed to the next attempt if lives remain. | Pass |
@@ -255,12 +255,12 @@ The image below demonstrates the input validation in action. If the user's input
 | 12    | Input Validation - Guess| If the input comprises a single letter and has not been attempted before, the system examines whether the letter is present in the secret word and provides feedback accordingly.| The feedback is returned as expected. | Pass |
 | 13    | Secret Word | If the entered letter is part of the word and the word hasn't been completely guessed, the system reveals the letter in the "Secret Word" and proceeds to the next attempt. If the letter is not in the word, the user loses a life, and the guessed letter is recorded for reference in subsequent attempts. If the user exhausts all lives, they are directed to the appropriate End of Game Screen with a "Game Over" message.| If the guessed letter is correct, it is appropriately displayed in the field, and the system proceeds to the next attempt. If the letter is incorrect, the user loses a life as anticipated, and they advance to the next attempt if they still have remaining lives. | Pass |
 | 14     | ASCII Art Progression   | If the guessed letter or word proves to be incorrect, causing a reduction in their remaining lives, the ASCII art will then depict the corresponding image based on the updated number of lives. |The ASCII art image adapts as expected | Pass |
-| 15    | Remaining Lives         | If the suggested letter or word is incorrect, decreases the number of lives by one and shows the updated count if there are more lives left. If the user has exhausted all lives, the game concludes. | The displayed number of lives aligns with expectations unless the user has none remaining. | Pass |
+| 15    | Remaining Lives         | If the suggested letter or word is incorrect, decrease the number of lives by one and show the updated count if there are more lives left. If the user has exhausted all lives, the game concludes. | The displayed number of lives aligns with expectations unless the user has none remaining. | Pass |
 | 16    | Used Letters Display    | The attempted letters are stored and presented alphabetically if there is more than one.| Used Letters were displayed as anticipated | Pass |
 | 17    | Play Game Loop          | The game follows this sequence until either the correct word is guessed or the user runs out of lives. | Loop functions as expected | Pass |
 | 18    | Clear Terminal | The terminal is cleared when the function is called | The terminal clears as expected | Pass |
 
-The images below demonstrate the input validation in action. If the user's input is deemed invalid, a yellow error message is displayed and the user is prompted propose a letter or word with the equivalent number of letters as the secret word. This process repeats until a valid input is submitted by the user.
+The images below demonstrate the input validation in action. If the user's input is deemed invalid, a yellow error message is displayed and the user is prompted to propose a letter or word with the equivalent number of letters as the secret word. This process repeats until a valid input is submitted by the user.
 
 <details>
   <summary>Valid letter input and is in secret word</summary>
@@ -290,17 +290,17 @@ The images below demonstrate the input validation in action. If the user's input
 </details>
 
 ### End Game Page
-| Step  | Description             | Anticipated Outcome                                                                    | Observed Outcome                                        | Status      |
-| :-----: | --------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------- | :---------: |
-| 1     | End Game Page           | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
-| 2     | Display Title ASCII     | Title loads with ASCII Art                                                             | ASCII Art loads as expected                             | Pass        |
-| 3     | Font Styles             | Font styles are displayed correctly                                                    | Font styles are displayed as expected                   | Pass        |
-| 4     | Correct Secret Word     | Correct secret word is displayed with appropriate congratulations/good effort message. | Correct word is displayed, paired with correct message. | Pass        |
-| 5     | Restart Game            | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
-| 6     | User Input              | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
-| 7     | Input Validation        | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
-| 8     | Input Validation        | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
-| 9     | User Input              | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
+| Step  | Description             | Anticipated Outcome                                                                    | Observed Outcome                                            | Status      |
+| :-----: | --------------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------- | :---------: |
+| 1     | End Game Page           | End Game Page loads with no issues                                                     | End Game Page loads as expected                             | Pass        |
+| 2     | Display Title ASCII     | Title loads with ASCII Art                                                             | ASCII Art loads as expected                                 | Pass        |
+| 3     | Font Styles             | Font styles are displayed correctly                                                    | Font styles are displayed as expected                       | Pass        |
+| 4     | Correct Secret Word     | Correct secret word is displayed with appropriate congratulations/good effort message. | Correct word is displayed, paired with the correct message. | Pass        |
+| 5     | Restart Game            | End Game Page loads with no issues                                                     | End Game Page loads as expected                             | Pass        |
+| 6     | User Input              | End Game Page loads with no issues                                                     | End Game Page loads as expected                             | Pass        |
+| 7     | Input Validation        | End Game Page loads with no issues                                                     | End Game Page loads as expected                             | Pass        |
+| 8     | Input Validation        | End Game Page loads with no issues                                                     | End Game Page loads as expected                             | Pass        |
+| 9     | User Input              | End Game Page loads with no issues                                                     | End Game Page loads as expected                             | Pass        |
 
 ### User Stories Testing
 
@@ -352,6 +352,40 @@ I referenced and tested each of my user stories throughout the testing process. 
 <em>I would like the challenge to remain and encounter different words than my last visit.</em>
   - The random word function, when paired with a generous list of potential secret words, aims to satisfy this need for a constant challenge. It is very unlikely that the user will encounter the same words frequently.
 
+## Resolved Bugs
+
+When applying my font styles to alter the text colour throughout this application, I encountered issues where the font colour would persist indefinitely throughout the page from the point it was first called. 
+
+<details>
+  <summary>Bug Before Fix</summary>
+  <img src="./docs/resolved-bug-before.png" width="700">
+  <img src="./docs/resolved-bug-before-two.png" width="700">
+</details>
+
+<br>
+
+To combat this, I created an additional font styling class variable which, through the use of ANSI escape codes, would cause the text to default back to the terminal default styling. I named this class variable "FIN" so that when reading my code back, it was clear where the styles would finish.
+
+
+        def welcome_page():
+        """
+        Displays the main title page
+        Prompts the player to press ENTER to begin the game
+        """
+        clear_terminal()
+
+        print(ascii_art.TITLE)
+        print(styles.BLUE_BOLD + "\nWelcome to the Watery Wordplay Wreck!" +
+              styles.FIN) <-------------------- I inserted the new class wherever I wanted the styles to end.
+
+        input("Please press ENTER to begin!\n")
+        clear_terminal()
+        game_rules()
+
+<details>
+  <summary>Bug After Fix</summary>
+  <img src="./docs/resolved-bug-after.png" width="700">
+</details>
 
 ## Deployment
 
@@ -368,11 +402,11 @@ The steps for deploying the application are as follows:
 3. Push all updates to GitHub.
 
 ### Deploying the Application to Heroku:
-1. Log into Heroku website.
+1. Log into the Heroku website.
 
 2. From the Dashboard page, click on "New" and then select "Create new app."
 
-3. Assign a name for the application, choose the region and click "Create app."
+3. Assign a name for the application, choose the region, and click "Create app."
 
 4. Once the application is created, go to the "Settings" tab and then "Reveal Config Vars" to set up config vars.
 
@@ -395,9 +429,9 @@ The steps for deploying the application are as follows:
 
     - If "Enable Automatic Deploys" is selected, the application will be built and available after the next changes are pushed to GitHub.
 
-### Forking the Github Repository:
+### Forking the GitHub Repository:
 
-You can fork a GitHub Repository to make a copy of the original repository to view or make changes without it affecting the original repository.
+You can fork a GitHub Repository to make a copy of the original repository to view or make changes without affecting the original repository.
 
 1. Find the GitHub repository.
 2. At the top of the page to the right, under your account, click the <em>Fork</em> button.
