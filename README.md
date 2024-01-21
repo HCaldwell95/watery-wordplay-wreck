@@ -240,14 +240,14 @@ The image below demonstrates the input validation in action. If the user's input
 <br>
 
 ### Game Page
-| Step  | Description             | Anticipated Outcome                                                                 | Observed Outcome                                 | Status      |
-| :---: | ----------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------ | :---------: |
-| 1     | Game Page               | Game Page loads with no issues                                                      | Game Page loads as expected                      | Pass        |
-| 2     | Font Styles             | Font styles are displayed correctly                                                 | Font styles are displayed as expected            | Pass        |
-| 3     | No. letters Display     | When the page is loaded, the word length is displayed                               | Error message is displayed as expected           | Pass        |
-| 4     | ASCII Art (Ship)        | ASCII art for sinking ship is displayed correctly based on lives remaining          | ASCII Art loads as expected                      | Pass        |
-| 5     | Input Validation - Guess| Checks if user input is in the alphabet, if not, an error message is displayed      | Error message is displayed as expected           | Pass        |
-| 6     | Input Validation - Guess| Validates the length and uniqueness of the input, offering feedback accordingly.    | Loops function as expected| Pass        |
+| Step  | Description             | Anticipated Outcome                                                                 | Observed Outcome                                                            | Status      |
+| :---: | ----------------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | :---------: |
+| 1     | Game Page               | Game Page loads with no issues                                                      | Game Page loads as expected                                                 | Pass        |
+| 2     | Font Styles             | Font styles are displayed correctly                                                 | Font styles are displayed as expected                                       | Pass        |
+| 3     | No. letters Display     | When the page is loaded, the word length is displayed                               | Error message is displayed as expected                                      | Pass        |
+| 4     | ASCII Art (Ship)        | ASCII art for sinking ship is displayed correctly based on lives remaining          | ASCII Art loads as expected                                                 | Pass        |
+| 5     | Input Validation - Guess| Checks if user input is in the alphabet, if not, an error message is displayed      | Error message is displayed as expected                                      | Pass        |
+| 6     | Input Validation - Guess| Validates the length and uniqueness of the input, offering feedback accordingly.    | If input has been used, an error message is displayed as expected           | Pass        |
 | 7     | Input Validation - Guess| Checks if the input matches the word length and hasn't been attempted, and provides feedback if it's the correct word.|The displayed feedback aligns with the expected correctness of the input. | Pass |
 | 8     | Input Validation - Guess| Correctly guessing the word leads to the game ending with a congratulatory message. Incorrect guesses result in life loss, and the guessed word is displayed. The game proceeds to the next attempt. | Successful word guesses lead to the anticipated end-of-game screen; unsuccessful ones deduct a life and proceed to the next attempt if lives remain. | Pass |
 | 9     | ASCII Art Progression   | If the guessed letter or word proves to be incorrect, causing a reduction in their remaining lives, the ASCII art will then depict the corresponding image based on the updated number of lives. |The ASCII art image adapts as expected | Pass |
@@ -297,11 +297,11 @@ The images below demonstrate the input validation in action. If the user's input
 | 2     | Display Title ASCII     | Title loads with ASCII Art                                                             | ASCII Art loads as expected                                 | Pass        |
 | 3     | Font Styles             | Font styles are displayed correctly                                                    | Font styles are displayed as expected                       | Pass        |
 | 4     | Correct Secret Word     | Correct secret word is displayed with appropriate congratulations/good effort message. | Correct word is displayed, paired with the correct message. | Pass        |
-| 5     | Restart Game            | End Game Page loads with no issues                                                     | End Game Page loads as expected                             | Pass        |
-| 6     | User Input              | End Game Page loads with no issues                                                     | End Game Page loads as expected                             | Pass        |
-| 7     | Input Validation        | End Game Page loads with no issues                                                     | End Game Page loads as expected                             | Pass        |
-| 8     | Input Validation        | End Game Page loads with no issues                                                     | End Game Page loads as expected                             | Pass        |
-| 9     | User Input              | End Game Page loads with no issues                                                     | End Game Page loads as expected                             | Pass        |
+| 5     | Restart Game            | The restart game content is displayed on both outcome screens                          | The content is displayed in both outcomes as expected       | Pass        |
+| 6     | Input Validation        | Only "Y" or "N" is accepted                                                            | Input is validated as expected                              | Pass        |
+| 7     | Input Validation        | If the input is not valid, display error message                                       | Error message is displayed as expected                      | Pass        |
+| 8     | Input Validation        | Loop continues, requesting an input until valid input is submitted                     | Loop functions as expected                                  | Pass        |
+| 9     | User Input              | After the player inputs a valid command, the terminal is reset. If the choice "Y" is made, the user is returned to the Rules Page to begin a new game. Otherwise, the player is directed back to the Welcome Page. | The terminal clears and the user is returned to appropriate the page                          | Pass        |
 
 ### User Stories Testing
 
@@ -462,6 +462,9 @@ You can fork a GitHub Repository to make a copy of the original repository to vi
 
 - <a href="https://www.studytonight.com/python-howtos/how-to-print-colored-text-in-python">Study Tonight</a>
     - Provided the ANSI code in Python required to style the fonts with colours. 
+
+- <a href="https://chat.openai.com/" target="_blank">ChatGPT</a>
+    - This project was developed with the assistance of ChatGPT, a language model created by OpenAI. ChatGPT played a crucial role in troubleshooting code, offering guidance on concise commenting, and aiding in adhering to character restrictions. The model's capabilities were instrumental in reviewing the code line by line with confirmations for my own benefit.
 
 - <a href="https://stackoverflow.com" target="_blank">Stack Overflow</a>
     - <a href="https://stackoverflow.com/questions/39378020/how-to-display-table-in-readme-md-file-in-github" target="_blank">(Source)</a> - Provided the code to create tables in the README.md.
