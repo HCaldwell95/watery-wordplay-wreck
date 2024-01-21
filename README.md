@@ -14,7 +14,7 @@ I appreciate you taking the time to explore my project, and I sincerely hope you
 
 <a href="https://github.com/HCaldwell95/watery-wordplay-wreck" target="_blank">View the GitHub repository here CHANGE TO CORRECT REPOSITORY</a>
 
-<em>Note: While developing this project, I recognised shortcomings in my demonstration of version control. To address this, I have reconstructed the repository, ensuring proper version control practices are now in place. You can find a link to the previous repository <a href="" target="_blank"> here</a>.
+<em>Note: While developing this project, I recognised shortcomings in my demonstration of version control. To address this, I have reconstructed the repository, ensuring proper version control practices are now in place. You can find a link to the previous repository <a href="" target="_blank"> here</a>.</em>
 
 # Table of Contents
 
@@ -64,13 +64,17 @@ As a returning user:
 ## Logic Flow
 To organise the logic flow of the game, I created a flow chart that outlines the individual steps. Each step is color-coded to differentiate between various types of activities.
 
-<img src="./docs/flow-chart.png" alt="Image of the project flowchart">
+<img src="./docs/flow-chart.png" alt="Image of the project flowchart" width="700">
   
 ## Existing Features
 
 ### Welcome Page
 
 This serves as the initial greeting for the game, featuring the game title rendered in ASCII Art. Users are prompted to initiate the game by pressing ENTER.
+
+<img src="./docs/welcome-page.png" width="700">
+
+---
 
 ### Rules Page
 
@@ -79,16 +83,37 @@ Once the user has pressed ENTER, the terminal clears and they will be taken to t
   -  The rules of the game and explanation of the objective.
   -  A user prompt to select their difficulty by selecting the desired number of lives.
 
-### Game Screen
+<img src="./docs/rules-page.png" width="700">
+
+---
+### Game Page
+
 
 Upon selecting the preferred number of lives, the game commences. Each session introduces a randomly chosen nautical-themed word, presenting a sinking ship image that dynamically reflects the remaining lives. The screen consistently displays the number of letters in the secret word.
 
 At the bottom of the page, the user is prompted to input either a letter or a word.
 
-# IMAGE IMAGE IMAGE IMAGE
+<img src="./docs/game-page.png" width="700"> 
 
-#Show screens of each instance of the game page, demonstrating the sinking ship and attempted letters etc
+Each user input undergoes validation checks to determine its presence in the word or if it matches the actual word.
 
+If the user's input is found in the word, constructive feedback is provided. The revealed letter appears in the "The word to guess" field, aiding the player in tracking the word's progress.
+
+<img src="./docs/correct-guess.png" width="700">
+
+If the user's input is not part of the word, feedback is shared, along with the remaining lives count. With each unsuccessful attempt, the player loses a life, and the ship begins to sink.
+
+<img src="./docs/incorrect-guess.png" width="700"> 
+
+If a word with the same number of letters as the target word is suggested, it is checked against the secret word. If the word is a match, the game concludes with a user victory. If not, the user loses a life and the ship descends deeper into the ocean. 
+
+<img src="./docs/word-guess-validation.png" width="700">
+
+After the first attempt, the letters and words that have already been used are displayed, offering assistance to the user.
+
+The user then continues to guess one letter at a time or opt to propose the entire word until either the correct word is guessed, leading to the game's conclusion, or the player exhausts all lives. 
+
+<img src="./docs/attempted-letters-and-words.png" width="700">
 
 
 ### End Game Page
@@ -132,37 +157,37 @@ The application underwent thorough validation to identify and rectify any syntax
 
 <details>
   <summary>Validation Results for run.py</summary>
-  <img src="">
+  <img src="./docs/python-linter-run.png">
 </details>
 
 <details>
   <summary>Validation Results for sinking_ship.py</summary>
-  <img src="">
+  <img src="./docs/python-linter-sinking-ship.png">
 </details>
 
 <details>
   <summary>Validation Results for ascii_art.py</summary>
-  <img src="">
+  <img src="./docs/python-linter-ascii-art.png">
 </details>
 
 <details>
   <summary>Validation Results for words.py</summary>
-  <img src="">
+  <img src="./docs/python-linter-words.png">
 </details>
 
 <details>
   <summary>Validation Results for game_over.py</summary>
-  <img src="">
+  <img src="./docs/python-linter-game-over.png">
 </details>
 
 <details>
   <summary>Validation Results for game_winner.py</summary>
-  <img src="">
+  <img src="./docs/python-linter-game-winner.png">
 </details>
 
 <details>
   <summary>Validation Results for font_styles.py</summary>
-  <img src="">
+  <img src="./docs/python-linter-font-styles.png">
 </details>
 
 ## Manual Testing
@@ -170,7 +195,7 @@ The application underwent thorough validation to identify and rectify any syntax
 
 ### Welcome Page
 | Step  | Description                | Anticipated Outcome                                                        | Observed Outcome                                 | Status      |
-| ----- | -------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
+| :---: | -------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------ | :---------: |
 | 1     | Deployed Website           | Welcome Page loads with no issues                                          | Welcome Page loads as expected                   | Pass        |
 | 2     | Display Title ASCII        | Title loads with ASCII Art                                                 | ASCII Art loads as expected                      | Pass        |
 | 3     | Font Styles                | Font styles are displayed correctly                                        | Font styles are displayed as expected            | Pass        |
@@ -178,7 +203,7 @@ The application underwent thorough validation to identify and rectify any syntax
 
 ### Rules Page
 | Step  | Description         | Anticipated Outcome                                                                 | Observed Outcome                                 | Status      |
-| ----- | ------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
+| :---: | ------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------ | :---------: |
 | 1     | Rules Page          | Rules Page loads with no issues                                                     | Rules Page loads as expected                     | Pass        |
 | 2     | Display Title ASCII | Title loads with ASCII Art                                                          | ASCII Art loads as expected                      | Pass        |
 | 3     | Font Styles         | Font styles are displayed correctly                                                 | Font styles are displayed as expected            | Pass        |
@@ -191,7 +216,7 @@ The application underwent thorough validation to identify and rectify any syntax
 
 ### Game Page
 | Step  | Description             | Anticipated Outcome                                                                 | Observed Outcome                                 | Status      |
-| ----- | ----------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------ | ----------- |
+| :---: | ----------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------ | :---------: |
 | 1     | Game Page               | Game Page loads with no issues                                                      | Game Page loads as expected                      | Pass        |
 | 2     | Font Styles             | Font styles are displayed correctly                                                 | Font styles are displayed as expected            | Pass        |
 | 3     | No. letters Display     | When the page is loaded, the word length is displayed                               | Error message is displayed as expected           | Pass        |
@@ -213,7 +238,7 @@ The application underwent thorough validation to identify and rectify any syntax
 
 ### End Game Page
 | Step  | Description             | Anticipated Outcome                                                                    | Observed Outcome                                        | Status      |
-| ----- | ----------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------- | ----------- |
+| :-----: | --------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------------------- | :---------: |
 | 1     | End Game Page           | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
 | 2     | Display Title ASCII     | Title loads with ASCII Art                                                             | ASCII Art loads as expected                             | Pass        |
 | 3     | Font Styles             | Font styles are displayed correctly                                                    | Font styles are displayed as expected                   | Pass        |
