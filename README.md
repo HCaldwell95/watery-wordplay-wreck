@@ -10,9 +10,9 @@ The primary objective of this project is to showcase my comprehension and applic
 
 I appreciate you taking the time to explore my project, and I sincerely hope you find as much enjoyment in it as I did during the design and development phases.
 
-<a href="https://hcaldwell95.github.io/salt-and-stone-studios/" target="_blank">View the live project here THIS ISN'T FINISHED</a>
+<a href="https://watery-wordplay-wreck-5dedc8ac41c5.herokuapp.com/" target="_blank">View the live project</a>
 
-<a href="https://github.com/HCaldwell95/watery-wordplay-wreck" target="_blank">View the GitHub repository here CHANGE TO CORRECT REPOSITORY</a>
+<a href="https://github.com/HCaldwell95/watery-wordplay-wreck" target="_blank">View the GitHub repository here</a>
 
 <em>Note: While developing this project, I recognised shortcomings in my demonstration of version control. To address this, I have reconstructed the repository, ensuring proper version control practices are now in place. You can find a link to the previous repository <a href="" target="_blank"> here</a>.</em>
 
@@ -95,43 +95,58 @@ At the bottom of the page, the user is prompted to input either a letter or a wo
 
 <img src="./docs/game-page.png" width="700"> 
 
-Each user input undergoes validation checks to determine its presence in the word or if it matches the actual word.
+<br>
 
-If the user's input is found in the word, constructive feedback is provided. The revealed letter appears in the "The word to guess" field, aiding the player in tracking the word's progress.
+Each user input undergoes validation checks to determine its presence in the word or if it matches the actual word. If the user's input is found in the word, constructive feedback is provided. The revealed letter appears in the "The word to guess" field, aiding the user in tracking the word's progress.
 
 <img src="./docs/correct-guess.png" width="700">
 
-If the user's input is not part of the word, feedback is shared, along with the remaining lives count. With each unsuccessful attempt, the player loses a life, and the ship begins to sink.
+<br>
+
+If the user's input is not part of the word, feedback is shared, along with the remaining lives count. With each unsuccessful attempt, the user loses a life, and the ship begins to sink.
+
 
 <img src="./docs/incorrect-guess.png" width="700"> 
+
+<br>
 
 If a word with the same number of letters as the target word is suggested, it is checked against the secret word. If the word is a match, the game concludes with a user victory. If not, the user loses a life and the ship descends deeper into the ocean. 
 
 <img src="./docs/word-guess-validation.png" width="700">
 
+<br>
+
 After the first attempt, the letters and words that have already been used are displayed, offering assistance to the user.
 
-The user then continues to guess one letter at a time or opt to propose the entire word until either the correct word is guessed, leading to the game's conclusion, or the player exhausts all lives. 
+The user then continues to guess one letter at a time or opt to propose the entire word until either the correct word is guessed, leading to the game's conclusion, or the user exhausts all lives. 
 
 <img src="./docs/attempted-letters-and-words.png" width="700">
 
+---
 
 ### End Game Page
 Upon completion of the game, users are transitioned to the End Game Page.
 
-If the word is successfully guessed, the screen showcases a triumphant "Congratulations!" message accompanied by ASCII Art to reiterate their success.
+If the word is successfully guessed, the screen showcases a triumphant "Congratulations!" message accompanied by the secret word and ASCII Art to reiterate their success.
 
-# IMAGE
+<img src="./docs/game-winner.png" width="700">
 
-In the event of an unsuccessful guess before exhausting lives, the "Game Over" message appears, complemented by an ASCII Art depiction of an ocean without a ship. The correct word is then revealed to the user.
+<br>
 
-# IMAGE
+In the event of an unsuccessful guess resulting in no lives remaining, the "Good effort!" message appears, followed by the correct word and complemented by an ASCII Art depiction of an ocean without a ship.
+
+<img src="./docs/game-over.png" width="700">
+
+<br>
 
 On this conclusive page, users can either:
   - opt to replay the game, which will redirect them to the Rules Page to choose new lives
   <br>or
   -  conclude the game, redirecting them back to the Welcome Page.
 
+### Future Features to Implement
+
+The game currently lacks personalisation and ownership. I aim to implement a feature enabling users to input their username, and their highest (and lowest) scores would be stored in a database, visible to all users through a leaderboard-style interface. This addition, featuring a leaderboard displaying the names and scores of past players, will enhance player engagement and promote continued gameplay.
 
 ## Python Libraries Used 
 ### random:
@@ -149,6 +164,11 @@ On this conclusive page, users can either:
   - <a href="https://github.com/" target="_blank">GitHub</a> was utilised to store both the repository and the codes.
   - <a href="https://dashboard.heroku.com/apps" target="_blank">Heroku</a> was chosen as the deployment platform for the application.
 
+### Other Online Resources
+  - <a href="https://lucid.app" target="_blank">Lucid Charts</a> was used to plan and create the logic flow of the game.
+  - <a href="https://app.grammarly.com/" target="_blank">Grammarly</a> was used to proof all files and remove grammatical and typographical errors.
+  - <a href="https://www.notion.so/" target="_blank">Notion</a> was used to make notes and to store essential images througout the development process. Notion also handled the compression of images in the process.
+
 ## Testing
 
 ### Code Validation
@@ -157,37 +177,37 @@ The application underwent thorough validation to identify and rectify any syntax
 
 <details>
   <summary>Validation Results for run.py</summary>
-  <img src="./docs/python-linter-run.png">
+  <img src="./docs/python-linter-run.png" width="700">
 </details>
 
 <details>
   <summary>Validation Results for sinking_ship.py</summary>
-  <img src="./docs/python-linter-sinking-ship.png">
+  <img src="./docs/python-linter-sinking-ship.png" width="700">
 </details>
 
 <details>
   <summary>Validation Results for ascii_art.py</summary>
-  <img src="./docs/python-linter-ascii-art.png">
+  <img src="./docs/python-linter-ascii-art.png" width="700">
 </details>
 
 <details>
   <summary>Validation Results for words.py</summary>
-  <img src="./docs/python-linter-words.png">
+  <img src="./docs/python-linter-words.png" width="700">
 </details>
 
 <details>
   <summary>Validation Results for game_over.py</summary>
-  <img src="./docs/python-linter-game-over.png">
+  <img src="./docs/python-linter-game-over.png" width="700">
 </details>
 
 <details>
   <summary>Validation Results for game_winner.py</summary>
-  <img src="./docs/python-linter-game-winner.png">
+  <img src="./docs/python-linter-game-winner.png" width="700">
 </details>
 
 <details>
   <summary>Validation Results for font_styles.py</summary>
-  <img src="./docs/python-linter-font-styles.png">
+  <img src="./docs/python-linter-font-styles.png" width="700">
 </details>
 
 ## Manual Testing
@@ -197,9 +217,9 @@ The application underwent thorough validation to identify and rectify any syntax
 | Step  | Description                | Anticipated Outcome                                                        | Observed Outcome                                 | Status      |
 | :---: | -------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------ | :---------: |
 | 1     | Deployed Website           | Welcome Page loads with no issues                                          | Welcome Page loads as expected                   | Pass        |
-| 2     | Display Title ASCII        | Title loads with ASCII Art                                                 | ASCII Art loads as expected                      | Pass        |
+| 2     | Display Title ASCII Art    | Title loads with ASCII Art rendering                                       | ASCII Art loads as expected                      | Pass        |
 | 3     | Font Styles                | Font styles are displayed correctly                                        | Font styles are displayed as expected            | Pass        |
-| 4     | User Input / Clear Terminal| Once the player presses ENTER, the terminal clears and loads the Rules Page| The terminal clears and the Rules Page is loaded | Pass        |
+| 4     | User Input / Clear Terminal| Once the user presses ENTER, the terminal clears and loads the Rules Page  | The terminal clears and the Rules Page is loaded | Pass        |
 
 ### Rules Page
 | Step  | Description         | Anticipated Outcome                                                                 | Observed Outcome                                 | Status      |
@@ -212,7 +232,11 @@ The application underwent thorough validation to identify and rectify any syntax
 | 6     | User Input          | Continues to request an input until a valid input is provided                       | Loops function as expected                       | Pass        |
 | 7     | User Input          | Once a valid input has been entered, the terminal clears and the Game Page is loaded| The terminal clears and the Games Page is loaded | Pass        |
 
-# Image for validation
+The image below demonstrates the input validation in action. If the user's input is deemed invalid, a yellow error message is displayed and the user is prompted to choose the number of lives again until a valid input is provided.
+
+<img src="./docs/rules-input-validator.png" width="700">
+
+<br>
 
 ### Game Page
 | Step  | Description             | Anticipated Outcome                                                                 | Observed Outcome                                 | Status      |
@@ -229,12 +253,41 @@ The application underwent thorough validation to identify and rectify any syntax
 | 10    | Input Validation - Guess| If the user input consists of more than one letter but does not match the length of the secret word, an error message will be shown.| Error message is displayed as expected | Pass |
 | 11    | Input Validation - Guess| If the input consists of a single letter, the system verifies whether the letter has been previously attempted. If it has, feedback is provided.|The feedback is returned as expected. | Pass |
 | 12    | Input Validation - Guess| If the input comprises a single letter and has not been attempted before, the system examines whether the letter is present in the secret word and provides feedback accordingly.| The feedback is returned as expected. | Pass |
-| 13    | Secret Word | If the entered letter is part of the word and the word hasn't been completely guessed, the system reveals the letter in the "Secret Word" and proceeds to the next attempt. If the letter is not in the word, the player loses a life, and the guessed letter is recorded for reference in subsequent attempts. If the player exhausts all lives, they are directed to the appropriate End of Game Screen with a "Game Over" message.| If the guessed letter is correct, it is appropriately displayed in the field, and the system proceeds to the next attempt. If the letter is incorrect, the player loses a life as anticipated, and they advance to the next attempt if they still have remaining lives. | Pass |
+| 13    | Secret Word | If the entered letter is part of the word and the word hasn't been completely guessed, the system reveals the letter in the "Secret Word" and proceeds to the next attempt. If the letter is not in the word, the user loses a life, and the guessed letter is recorded for reference in subsequent attempts. If the user exhausts all lives, they are directed to the appropriate End of Game Screen with a "Game Over" message.| If the guessed letter is correct, it is appropriately displayed in the field, and the system proceeds to the next attempt. If the letter is incorrect, the user loses a life as anticipated, and they advance to the next attempt if they still have remaining lives. | Pass |
 | 14     | ASCII Art Progression   | If the guessed letter or word proves to be incorrect, causing a reduction in their remaining lives, the ASCII art will then depict the corresponding image based on the updated number of lives. |The ASCII art image adapts as expected | Pass |
-| 15    | Remaining Lives         | If the suggested letter or word is incorrect, decreases the number of lives by one and shows the updated count if there are more lives left. If the player has exhausted all lives, the game concludes. | The displayed number of lives aligns with expectations unless the player has none remaining. | Pass |
+| 15    | Remaining Lives         | If the suggested letter or word is incorrect, decreases the number of lives by one and shows the updated count if there are more lives left. If the user has exhausted all lives, the game concludes. | The displayed number of lives aligns with expectations unless the user has none remaining. | Pass |
 | 16    | Used Letters Display    | The attempted letters are stored and presented alphabetically if there is more than one.| Used Letters were displayed as anticipated | Pass |
-| 17    | Play Game Loop          | The game follows this sequence until either the correct word is guessed or the player runs out of lives. | Loop functions as expected | Pass |
+| 17    | Play Game Loop          | The game follows this sequence until either the correct word is guessed or the user runs out of lives. | Loop functions as expected | Pass |
 | 18    | Clear Terminal | The terminal is cleared when the function is called | The terminal clears as expected | Pass |
+
+The images below demonstrate the input validation in action. If the user's input is deemed invalid, a yellow error message is displayed and the user is prompted propose a letter or word with the equivalent number of letters as the secret word. This process repeats until a valid input is submitted by the user.
+
+<details>
+  <summary>Valid letter input and is in secret word</summary>
+  <img src="./docs/game-page-valid-letter-in-secret.png" width="500">
+</details>
+
+<details>
+  <summary>Valid letter input but is NOT in secret word</summary>
+  <img src="./docs/game-page-valid-letter-not-secret.png" width="500">
+</details>
+
+<details>
+  <summary>Valid word input but is NOT in secret word</summary>
+  <img src="./docs/game-page-valid-word-not-secret.png" width="500">
+</details>
+
+<details>
+  <summary>Invalid letter input: is not in alphabet</summary>
+  <img src="./docs/game-page-invalid-not-alphabet.png" width="500">
+  <img src="./docs/game-page-invalid-not-alphabet-num.png" width="500">
+</details>
+
+<details>
+  <summary>Invalid word input: word length does not match secret word</summary>
+  <img src="./docs/game-page-invalid-word-length.png" width="500">
+  <img src="./docs/game-page-invalid-word-length-range.png" width="500">
+</details>
 
 ### End Game Page
 | Step  | Description             | Anticipated Outcome                                                                    | Observed Outcome                                        | Status      |
@@ -249,10 +302,61 @@ The application underwent thorough validation to identify and rectify any syntax
 | 8     | Input Validation        | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
 | 9     | User Input              | End Game Page loads with no issues                                                     | End Game Page loads as expected                         | Pass        |
 
+### User Stories Testing
+
+I referenced and tested each of my user stories throughout the testing process. Addressing them as follows:
+
+<em>I would like to understand how the game works and how to play with ease.</em>
+  - The Rules Page clearly outlines the rules of the game and explains expected inputs.
+
+<br>
+
+<em>I would like the flexibility to tailor the difficulty to match my skill and comfort.</em>
+  - The user is able to choose their desired number of lives, thus setting the difficulty of the game.
+
+<br>
+
+<em>I would like prompt feedback for every guess I make during the gameplay.</em>
+  - Every valid input is examined to check if it is in the word or is the actual word, and corresponding feedback is provided.
+    - If the input is correct, a green message is displayed.
+    - If the input is incorrect, a red message is displayed along with the number of lives the user has remaining.
+    - If the input is invalid, a yellow error message is displayed.
+
+<br>
+
+<em>I would like visibility of any letters or words previously used to avoid using them again.</em>
+  - After the first attempt,l used letters and words are displayed, aiding the user in their quest.
+
+<br>
+
+<em>I expect to receive an error message with an explanation if my guess is deemed invalid.</em>
+  - In case of an invalid input, an error message is presented, clarifying the expected input. This is illustrated in the Game Page section above with examples of the validation in action.
+
+<br>
+
+<em>I wish to monitor my progress throughout the game.</em>
+  - The secret word unveils correctly guessed letters and displays the remaining letters with underscores. If the user's input is incorrect, the remaining lives are displayed - enabling progress tracking.
+
+<br>
+
+<em>I would like the option to either replay the game or conclude my session once the game concludes.</em>
+  - Upon game completion, the user is prompted to either start another game or conclude the current session, regardless of whether the user had succeeded.
+
+<br>
+
+<em>I would like to be able to relearn the game quickly and easily.</em>
+  - Before a user can play the game, they are directed to the Rules Page which clearly defines the game requirements, allowing for an easy return to the game.
+
+<br>
+
+<em>I would like the challenge to remain and encounter different words than my last visit.</em>
+  - The random word function, when paired with a generous list of potential secret words, aims to satisfy this need for a constant challenge. It is very unlikely that the user will encounter the same words frequently.
+
 
 ## Deployment
 
-This application has been deployed using Heroku. Link to live project - Watery Wordplay Wreck.
+This application has been deployed using Heroku. 
+<br><a href="https://watery-wordplay-wreck-5dedc8ac41c5.herokuapp.com/" target="_blank">Link to live project</a>
 
 The steps for deploying the application are as follows:
 
@@ -278,7 +382,7 @@ The steps for deploying the application are as follows:
 
 7. Add the necessary buildpacks for the application. For this project, "Python" and "Nodejs" are required.
 
-    It is crucial to maintain the correct order of buildpacks. "Python" should be the first, followed by "Nodejs." Adjust the order by clicking and dragging if needed.
+    - It is crucial to maintain the correct order of buildpacks. "Python" should be the first, followed by "Nodejs." Adjust the order by clicking and dragging if needed.
 
 8. Click "Deploy" in the top submenu.
     - Under "Deployment method", select "GitHub" to connect to GitHub.
@@ -289,7 +393,7 @@ The steps for deploying the application are as follows:
 
 10. After the deployment, scroll to the top of the screen and click "Open app."
 
-    If "Enable Automatic Deploys" is selected, the application will be built and available after the next changes are pushed to GitHub.
+    - If "Enable Automatic Deploys" is selected, the application will be built and available after the next changes are pushed to GitHub.
 
 ### Forking the Github Repository:
 
@@ -331,7 +435,10 @@ You can fork a GitHub Repository to make a copy of the original repository to vi
 ### Media
 
 - <a href="https://patorjk.com/software/taag/#p=testall&f=Slant%20Relief&t=Watery%20Wordplay" target="_blank">Patorjk</a>
-    - Provided all of the Ascii Art for the titles throughout the application.
+    - Provided all of the ASCII Art for the titles throughout the application.
+
+- <a href="https://emojicombos.com/" target="_blank">Emoji Combos</a>
+    - Provided all of the ASCII Art for the <a href="https://emojicombos.com/sinking-ship-ascii-art" target="_blank">Sinking Ship</a> and <a href="https://emojicombos.com/thumbs-up" target="_blank">Thumbs Up</a>.
 
 ## Disclaimer
 
