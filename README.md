@@ -14,7 +14,7 @@ I appreciate you taking the time to explore my project, and I sincerely hope you
 
 <a href="https://github.com/HCaldwell95/watery-wordplay-wreck" target="_blank">View the GitHub repository here</a>
 
-<em>Note: While developing this project, I recognised shortcomings in my demonstration of version control. To address this, I have reconstructed the repository, ensuring proper version control practices are now in place. You can find a link to the previous repository <a href="" target="_blank"> here</a>.</em>
+<em>Note: While developing this project, I recognised shortcomings in my demonstration of version control. To address this, I have reconstructed the repository, ensuring proper version control practices are now in place. You can find a link to the correct repository <a href="https://github.com/HCaldwell95/watery-wordplay-wreck-submit" target="_blank"> here</a>.</em>
 
 # Table of Contents
 
