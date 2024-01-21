@@ -34,6 +34,7 @@ I appreciate you taking the time to explore my project, and I sincerely hope you
 7. [Testing](#testing)
    1. [Code Validation](#code-validation)
    2. [Manual Testing](#manual-testing)
+   3. [Resolved Bugs](#resolved-bugs)
 8. [Deployment](#deployment)
    1. [Preparation](#preparation)
    2. [Deploying the Application to Heroku](#deploying-the-application-to-heroku)
@@ -370,13 +371,13 @@ To combat this, I created an additional font styling class variable which, throu
         def welcome_page():
         """
         Displays the main title page
-        Prompts the player to press ENTER to begin the game
+        Prompts the user to press ENTER to begin the game
         """
         clear_terminal()
 
         print(ascii_art.TITLE)
         print(styles.BLUE_BOLD + "\nWelcome to the Watery Wordplay Wreck!" +
-              styles.FIN) <-------------------- I inserted the new class wherever I wanted the styles to end.
+              styles.FIN) <---- I inserted the new class variable wherever I wanted the styles to end.
 
         input("Please press ENTER to begin!\n")
         clear_terminal()

@@ -22,7 +22,7 @@ def clear_terminal():
 def welcome_page():
     """
     Displays the main title page
-    Prompts the player to press ENTER to begin the game
+    Prompts the user to press ENTER to begin the game
     """
     clear_terminal()
 
@@ -56,7 +56,7 @@ def game_rules():
 
 def choose_num_of_lives():
     """
-    Requests that the player selects the number of lives they wish to play
+    Requests that the user selects the number of lives they wish to play
     with, allowing them to set the difficulty. This loop continues until a
     valid input has been provided.
     """
@@ -77,7 +77,7 @@ def choose_num_of_lives():
 
 def get_random_word():
     """
-    Pulls a random word from words.py for the player to guess.
+    Pulls a random word from words.py for the user to guess.
     """
     word = random.choice(sea_themed_words)
     return word.upper()
@@ -85,7 +85,7 @@ def get_random_word():
 
 def restart_game():
     """
-    Asks the player if they would like to play the game again.
+    Asks the user if they would like to play the game again.
     """
     while True:
         print("\nWould you like to play again? Enter " + styles.GRN_Y +
@@ -244,7 +244,7 @@ def play_game(word, number_of_lives):
         print("Thank you for playing our Watery Wordplay Wreck!\n")
         draw_game_over()
 
-    # Asks the player if they would like to play the game again.
+    # Asks the user if they would like to play the game again.
     restart_game()
 
 
